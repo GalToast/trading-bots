@@ -1,0 +1,90 @@
+{
+  "_comment": "WARP DRIVE CONFIG — Optimal M15+M5+H1 multi-timeframe stacking for BTCUSD",
+  "_total_projected": "BACKTEST_PROJECTION_NOT_REALIZED: $2,739,862 in 90 days = $30,443/day = $11.1M/year",
+  "_validated": "runner_modeled_backtest_only",
+  "_validation_date": "2026-04-10",
+  "_validation_notes": "Multi-TF stacking confirmed: edges add with zero interference. Momentum gate OFF on all timeframes. Floating losses manageable at ~5% of realized.",
+
+  "symbol": "BTCUSD",
+  "engines": [
+    {
+      "name": "M15_Engine",
+      "timeframe": "M15",
+      "step": 15.0,
+      "max_open_per_side": 80,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": false,
+      "projected_90d": 1803993,
+      "projected_daily": 20044,
+      "closes_90d": 11677,
+      "rearm_opens_90d": 5832,
+      "floating_loss_90d": -73925,
+      "risk_notes": "Max seen positions: 107. Floating is 4.1% of realized. Manageable."
+    },
+    {
+      "name": "M5_Engine",
+      "timeframe": "M5",
+      "step": 100.0,
+      "max_open_per_side": 60,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": false,
+      "projected_90d": 664045,
+      "projected_daily": 7378,
+      "closes_90d": 2297,
+      "rearm_opens_90d": 1145,
+      "floating_loss_90d": -53724,
+      "risk_notes": "Max seen positions: 38. Floating is 7.5% of realized."
+    },
+    {
+      "name": "H1_Engine",
+      "timeframe": "H1",
+      "step": 25.0,
+      "max_open_per_side": 60,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": false,
+      "projected_90d": 271823,
+      "projected_daily": 3020,
+      "closes_90d": 2859,
+      "rearm_opens_90d": 1426,
+      "floating_loss_90d": -12387,
+      "risk_notes": "Max seen positions: 38. Floating is 4.4% of realized."
+    }
+  ],
+
+  "portfolio_summary": {
+    "total_projected_90d": 2739862,
+    "total_daily": 30443,
+    "total_annual": 11111662,
+    "total_closes_90d": 16833,
+    "total_rearm_opens_90d": 8403,
+    "total_floating_90d": -140036,
+    "floating_as_pct_realized": 5.1,
+    "risk_management": {
+      "max_total_exposure": 176,
+      "breakout_kill_threshold": 2.0,
+      "max_drawdown_pct": 10.0,
+      "daily_loss_limit": 50000,
+      "weekly_loss_limit": 150000
+    }
+  },
+
+  "cross_symbol_configs": {
+    "ETHUSD_M5": {"step": 5.0, "max_open": 60, "projected_90d": 317317},
+    "SOLUSD_M5": {"step": 0.5, "max_open": 60, "projected_90d": 220984},
+    "XRPUSD_M5": {"step": 0.01, "max_open": 60, "projected_90d": 192368},
+    "DOGEUSD_M5": {"step": 0.001, "max_open": 60, "projected_90d": 70718},
+    "DOTUSD_M5": {"step": 0.1, "max_open": 60, "projected_90d": 39070},
+    "ADAUSD_M5": {"step": 0.01, "max_open": 60, "projected_90d": 12950}
+  },
+
+  "live_shadow_launch_plan": {
+    "phase_1": "Launch BTCUSD M15+M5+H1 as shadow lanes on separate MT5 accounts",
+    "phase_2": "Add ETHUSD M5, SOLUSD M5 shadow lanes",
+    "phase_3": "Add remaining crypto (XRP, DOGE, DOT, ADA) M5 shadow lanes",
+    "phase_4": "If shadow results match backtest within 10%, promote to live",
+    "timeline": "Phase 1: immediate | Phase 2: 48h | Phase 3: 96h | Phase 4: 7 days"
+  }
+}

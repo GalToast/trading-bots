@@ -1,0 +1,50 @@
+{
+  "name": "shadow_nas100_breakout_v1",
+  "kind": "shadow_index",
+  "state_path": "reports/penetration_lattice_shadow_nas100_breakout_v1_state.json",
+  "event_path": "reports/penetration_lattice_shadow_nas100_breakout_v1_events.jsonl",
+  "poll_seconds": 30,
+  "stale_after_seconds": 240,
+  "process_match_substrings": [
+    "scripts/live_penetration_lattice_shadow.py",
+    "shadow_nas100_breakout_v1_state.json"
+  ],
+  "restart_args": [
+    "scripts/live_penetration_lattice_shadow.py",
+    "--symbol", "NAS100",
+    "--timeframe", "M15",
+    "--step-buy", "13.37",
+    "--step-sell", "28.58",
+    "--max-open-per-side", "12",
+    "--raw-close-alpha", "0.6",
+    "--raw-rearm-variant", "rearm_lvl2_exc1",
+    "--raw-rearm-cooldown-bars", "3",
+    "--raw-sell-gap", "1",
+    "--raw-buy-gap", "1",
+    "--poll-seconds", "30",
+    "--max-floating-loss-usd", "-15.0",
+    "--escape-bars", "10",
+    "--escape-threshold-usd", "10.0",
+    "--max-lattice-window-bars", "240",
+    "--state-path", "reports/penetration_lattice_shadow_nas100_breakout_v1_state.json",
+    "--event-path", "reports/penetration_lattice_shadow_nas100_breakout_v1_events.jsonl"
+  ],
+  "enabled": false,
+  "watchdog_group": "index_watchdog",
+  "hungry_hippo_metadata": {
+    "personality": "BREAKOUT_BUY_TIGHT",
+    "tuning_source": "box_detector.py + breakout_geometry",
+    "box_state": "BREAKOUT_UP",
+    "box_top": 25880.19,
+    "box_bottom": 25797.69,
+    "box_position_pct": 239.6,
+    "current_price": 25995.39,
+    "step_buy_coeff": 0.7,
+    "step_sell_coeff": 1.5,
+    "atr_current": 19.10,
+    "alpha": 0.6,
+    "validation_status": "shadow_launch — breakout riding test",
+    "deploy_priority": 1,
+    "risk_notes": "NAS100 broke above box resistance (25880). BUY-tight geometry catches pullbacks in the breakout. Wide SELL steps avoid chasing counter-moves. Alpha=0.6 for fast profit-taking on breakout reversals. Escape hatch Tier 1-3 wired. Kill on box re-entry (if price falls back below 25880, the breakout is false)."
+  }
+}

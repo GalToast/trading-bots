@@ -1,0 +1,18 @@
+{
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "NZDUSD",
+    "USDJPY",
+    "BTCUSD",
+    "ETHUSD",
+    "SOLUSD",
+    "XRPUSD"
+  ],
+  "poll_interval_ms": 250,
+  "cache_path": "reports/shared_price_cache.json",
+  "heartbeat_path": "reports/shared_price_feeder_heartbeat.json",
+  "max_stale_ms": 1000,
+  "fallback_to_mt5": true,
+  "description": "Shared price feeder configuration. All lanes should read from the cache instead of polling MT5 independently."
+}

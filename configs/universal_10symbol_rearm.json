@@ -1,0 +1,141 @@
+{
+  "_comment": "Universal 10-symbol penetration lattice rearm config — FX M1 + Crypto H1",
+  "_notes": [
+    "Independently verified: $115,961 crypto + $34,890 FX = $150,851 in 90d",
+    "All symbols use: momentum_gate=True, alpha=1.0, sell_gap=1, buy_gap=1",
+    "Same architecture, different timeframes and step sizes"
+  ],
+
+  "symbols": {
+    "GBPUSD": {
+      "timeframe": "M1",
+      "step": 1.0,
+      "step_is_price_units": false,
+      "max_open_per_side": 20,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 14979.1
+    },
+    "EURUSD": {
+      "timeframe": "M1",
+      "step": 1.0,
+      "step_is_price_units": false,
+      "max_open_per_side": 20,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 7523.4
+    },
+    "NZDUSD": {
+      "timeframe": "M1",
+      "step": 1.0,
+      "step_is_price_units": false,
+      "max_open_per_side": 20,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 2325.5
+    },
+    "BTCUSD": {
+      "timeframe": "H1",
+      "step": 50.0,
+      "step_is_price_units": true,
+      "max_open_per_side": 30,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 83191.56
+    },
+    "ETHUSD": {
+      "timeframe": "H1",
+      "step": 10.0,
+      "step_is_price_units": true,
+      "max_open_per_side": 30,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 18732.66
+    },
+    "XRPUSD": {
+      "timeframe": "H1",
+      "step": 0.05,
+      "step_is_price_units": true,
+      "max_open_per_side": 8,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 7774.78,
+      "_retuned": "2026-04-15T17:15 UTC — step 0.01→0.05 (~1.0x ATR), max_open 30→8. Was 160 offensive exits at 0% WR, -$977. See reports/xrp_unified_shadow_geometry_diagnosis.md"
+    },
+    "SOLUSD": {
+      "timeframe": "H1",
+      "step": 0.50,
+      "step_is_price_units": true,
+      "max_open_per_side": 30,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 5706.10
+    },
+    "DOGEUSD": {
+      "timeframe": "H1",
+      "step": 0.001,
+      "step_is_price_units": true,
+      "max_open_per_side": 30,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 452.72
+    },
+    "ADAUSD": {
+      "timeframe": "H1",
+      "step": 0.005,
+      "step_is_price_units": true,
+      "max_open_per_side": 30,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 66.53
+    },
+    "DOTUSD": {
+      "timeframe": "H1",
+      "step": 0.05,
+      "step_is_price_units": true,
+      "max_open_per_side": 30,
+      "close_gap": 1,
+      "close_alpha": 1.0,
+      "momentum_gate": true,
+      "rearm_variant": "rearm_lvl2_exc1",
+      "rearm_cooldown_bars": 0,
+      "verified_backtest_90d": 30.21
+    }
+  },
+
+  "portfolio_totals": {
+    "crypto_90d": 115960.82,
+    "fx_90d": 34890.0,
+    "combined_90d": 150850.82,
+    "combined_daily_avg": 1676.12,
+    "baseline_90d": 6189.98,
+    "multiplier_over_baseline": 24.4
+  }
+}

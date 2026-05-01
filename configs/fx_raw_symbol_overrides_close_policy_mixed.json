@@ -1,0 +1,14 @@
+{
+  "EURUSD": {
+    "raw_close_alpha": 0.5,
+    "raw_close_style": "outer",
+    "raw_sell_gap": 2,
+    "raw_buy_gap": 2
+  },
+  "GBPUSD": {
+    "raw_close_alpha": 0.5,
+    "raw_close_style": "all_profitable",
+    "raw_sell_gap": 1,
+    "raw_buy_gap": 1
+  }
+}

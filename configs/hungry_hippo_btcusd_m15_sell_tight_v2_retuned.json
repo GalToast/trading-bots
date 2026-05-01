@@ -1,0 +1,63 @@
+{
+  "name": "shadow_btcusd_m15_sell_tight_v2_retuned",
+  "kind": "shadow_crypto",
+  "state_path": "reports/penetration_lattice_shadow_btcusd_m15_sell_tight_v2_state.json",
+  "event_path": "reports/penetration_lattice_shadow_btcusd_m15_sell_tight_v2_events.jsonl",
+  "poll_seconds": 30,
+  "stale_after_seconds": 240,
+  "process_match_substrings": [
+    "scripts/live_penetration_lattice_tick_crypto_shadow.py",
+    "shadow_btcusd_m15_sell_tight_v2_state.json"
+  ],
+  "restart_args": [
+    "scripts/live_penetration_lattice_tick_crypto_shadow.py",
+    "--symbol", "BTCUSD",
+    "--timeframe", "M15",
+    "--step", "259.43",
+    "--step-sell", "259.43",
+    "--step-buy", "389.14393",
+    "--max-open-per-side", "8",
+    "--raw-close-alpha", "0.3",
+    "--raw-rearm-variant", "rearm_lvl2_exc1",
+    "--raw-rearm-cooldown-bars", "12",
+    "--raw-sell-gap", "1",
+    "--raw-buy-gap", "1",
+    "--poll-seconds", "30",
+    "--max-floating-loss-usd", "-15.0",
+    "--escape-hatch",
+    "--escape-max-bars", "12",
+    "--escape-max-loss", "5.0",
+    "--max-lattice-window-bars", "240",
+    "--state-path", "reports/penetration_lattice_shadow_btcusd_m15_sell_tight_v2_state.json",
+    "--event-path", "reports/penetration_lattice_shadow_btcusd_m15_sell_tight_v2_events.jsonl"
+  ],
+  "enabled": true,
+  "watchdog_group": "crypto_watchdog",
+  "hungry_hippo_metadata": {
+    "personality": "SELL-tight-RETUNED",
+    "tuning_source": "post_launch_verdict_v1_failed_reset_storm",
+    "regime": "bounce_reversal",
+    "control_mode": "bounce_reversal",
+    "action_bias": "SELL",
+    "buy_step_coeff": 1.5,
+    "sell_step_coeff": 1.0,
+    "computed_buy_step": 389.14393,
+    "computed_sell_step": 259.43,
+    "atr_current": 259.43,
+    "regime_coeff": 1.0,
+    "alpha": 0.3,
+    "rearm_variant": "rearm_lvl2_exc1",
+    "max_open_per_side_cap": 8,
+    "validation_status": "v2_retuned_2026_04_15 — sell_step 129→259 (1.0x ATR) to fix 25.7 resets/close in v1",
+    "deploy_priority": 1,
+    "risk_notes": "V2 retune of failed v1. Sell step widened from $129.71 (0.5x ATR) to $259.43 (1.0x ATR) to eliminate reset storm. Max open reduced from 12 to 8. V1 had 1,362 resets in 53 closes (25.7:1). V2 must achieve <2 resets/close to pass.",
+    "guardrails": {
+      "kill_on_reset_storm": true,
+      "max_resets_per_hour": 6,
+      "max_resets_per_close": 2.0,
+      "floating_loss_limit_usd": -15.0,
+      "session_gate": null,
+      "escape_hatch_enabled": true
+    }
+  }
+}

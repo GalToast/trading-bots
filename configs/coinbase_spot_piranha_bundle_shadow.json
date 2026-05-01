@@ -1,0 +1,61 @@
+{
+  "poll_seconds": 5,
+  "lanes": [
+    {
+      "lane_name": "shadow_coinbase_xrpusd_piranha",
+      "product_id": "XRP-USD",
+      "timeframe": "M1",
+      "buy_step": 0.015,
+      "profit_target": 0.025,
+      "quote_per_buy": 6,
+      "starting_cash": 48,
+      "max_lots": 6,
+      "taker_fee_bps": 120,
+      "min_hold_seconds": 0,
+      "state_path": "reports/coinbase_spot_shadow_xrpusd_piranha_state.json",
+      "event_path": "reports/coinbase_spot_shadow_xrpusd_piranha_events.jsonl"
+    },
+    {
+      "lane_name": "shadow_coinbase_dogeusd_piranha",
+      "product_id": "DOGE-USD",
+      "timeframe": "M1",
+      "buy_step": 0.0013,
+      "profit_target": 0.0018,
+      "quote_per_buy": 6,
+      "starting_cash": 48,
+      "max_lots": 6,
+      "taker_fee_bps": 120,
+      "min_hold_seconds": 0,
+      "state_path": "reports/coinbase_spot_shadow_dogeusd_piranha_state.json",
+      "event_path": "reports/coinbase_spot_shadow_dogeusd_piranha_events.jsonl"
+    },
+    {
+      "lane_name": "shadow_coinbase_suiusd_piranha",
+      "product_id": "SUI-USD",
+      "timeframe": "M1",
+      "buy_step": 0.012,
+      "profit_target": 0.018,
+      "quote_per_buy": 6,
+      "starting_cash": 48,
+      "max_lots": 6,
+      "taker_fee_bps": 120,
+      "min_hold_seconds": 0,
+      "state_path": "reports/coinbase_spot_shadow_suiusd_piranha_state.json",
+      "event_path": "reports/coinbase_spot_shadow_suiusd_piranha_events.jsonl"
+    },
+    {
+      "lane_name": "shadow_coinbase_adausd_piranha",
+      "product_id": "ADA-USD",
+      "timeframe": "M1",
+      "buy_step": 0.003,
+      "profit_target": 0.0045,
+      "quote_per_buy": 6,
+      "starting_cash": 48,
+      "max_lots": 6,
+      "taker_fee_bps": 120,
+      "min_hold_seconds": 0,
+      "state_path": "reports/coinbase_spot_shadow_adausd_piranha_state.json",
+      "event_path": "reports/coinbase_spot_shadow_adausd_piranha_events.jsonl"
+    }
+  ]
+}

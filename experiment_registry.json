@@ -1,0 +1,5690 @@
+{
+  "version": "1.0",
+  "created": "2026-04-12T18:18:00Z",
+  "description": "Master registry for 500 unique strategies Ã— 235 Coinbase coins experiment tracking",
+  "goal": "Test 500 genuinely different strategies (not param variations) across the Coinbase coin library, 50 at a time",
+  "strategy_categories": {
+    "mean_reversion": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "wavelet_reversion",
+        "gap_reversion",
+        "cross_sectional_reversion",
+        "macd_reversion",
+        "ratio_reversion",
+        "momentum_reversion_hybrid",
+        "factor_reversion",
+        "correlation_reversion",
+        "time_decay_reversion",
+        "residual_reversion",
+        "breakout_reversion_hybrid",
+        "snap_back",
+        "anchored_vwap_reversion",
+        "ema_reversion",
+        "spread_reversion",
+        "volatility_reversion",
+        "dynamic_reversion",
+        "roc_reversion",
+        "fourier_reversion",
+        "vwap_reversion",
+        "sma_reversion",
+        "exhaustion_reversion",
+        "kalman_reversion",
+        "sector_reversion",
+        "volume_reversion",
+        "bb_reversion",
+        "seasonal_reversion",
+        "panic_reversion",
+        "std_dev_reversion",
+        "pairs_trading",
+        "distance_reversion",
+        "beta_reversion",
+        "mad_reversion",
+        "zscore_reversion",
+        "hurst_reversion",
+        "weighted_reversion",
+        "adaptive_reversion",
+        "cointegration",
+        "rsi_divergence",
+        "percentile_channel",
+        "entropy_reversion",
+        "pattern_reversion",
+        "regime_reversion",
+        "capitulation_reversion",
+        "ou_reversion",
+        "stochastic_reversion",
+        "williams_r_reversion",
+        "cci_reversion",
+        "rank_reversion",
+        "cycle_reversion"
+      ]
+    },
+    "momentum": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "momentum"
+      ]
+    },
+    "breakout": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "fibonacci_breakout",
+        "pivot_breakout",
+        "momentum_breakout",
+        "breakout_ml",
+        "breakout_hybrid",
+        "trend_breakout",
+        "breakout_regime",
+        "breakout_statistical",
+        "breakout_trend",
+        "breakout_quantitative",
+        "breakout_ensemble",
+        "breakout_momentum",
+        "breakout_filter",
+        "opening_range_breakout",
+        "volatility_breakout",
+        "keltner_breakout",
+        "breakout_adaptive",
+        "volume_breakout",
+        "breakout_volume",
+        "breakout_position_sizing",
+        "multi_timeframe_breakout",
+        "atr_breakout",
+        "channel_breakout",
+        "breakout_pullback",
+        "breakout_expansion",
+        "breakout_reversion",
+        "breakout_multi_asset",
+        "breakout_cross_sectional",
+        "breakout_timing",
+        "breakout_pattern",
+        "breakout_portfolio",
+        "gap_breakout",
+        "breakout_squeeze",
+        "breakout_validation",
+        "donchian_breakout",
+        "false_breakout_reversal",
+        "breakout_confluence",
+        "breakout_volatility",
+        "inside_bar_breakout",
+        "breakout_continuation",
+        "pattern_breakout",
+        "breakout_signal",
+        "breakout_confirmation",
+        "breakout_retest",
+        "breakout_dynamic",
+        "breakout_contraction",
+        "breakout_risk",
+        "breakout_exit",
+        "breakout_entry",
+        "breakout_consolidation"
+      ]
+    },
+    "volatility": {
+      "target": 50,
+      "tested": 32,
+      "status": "in_progress",
+      "strategies": [
+        "vol_quantitative",
+        "yang_zhang",
+        "vol_breakout",
+        "atr_trailing",
+        "vol_reversion",
+        "rogers_satchell",
+        "vol_iqr",
+        "bb_width_expansion",
+        "vol_seasonal",
+        "atr_contraction",
+        "vol_cycle",
+        "vol_wavelet",
+        "vol_regime_switch",
+        "vol_cross_sectional",
+        "vol_markov",
+        "vol_percentile",
+        "vol_adaptive",
+        "vol_stochastic",
+        "garman_klass",
+        "vol_rank",
+        "vol_zscore",
+        "vol_garch",
+        "parkinson_vol",
+        "vol_threshold",
+        "atr_band",
+        "vol_mad",
+        "vol_momentum",
+        "bb_width_squeeze",
+        "vol_statistical",
+        "vol_multi_asset",
+        "vol_fourier",
+        "vol_range"
+      ]
+    },
+    "volume": {
+      "target": 50,
+      "tested": 33,
+      "status": "in_progress",
+      "strategies": [
+        "obv_positive_volume",
+        "vol_force_index",
+        "vol_cumulative_delta",
+        "vol_ease_of_movement",
+        "vol_oscillator",
+        "vol_anomaly",
+        "vol_relative",
+        "vol_chaikin_osc",
+        "vol_weighted",
+        "obv_breakout",
+        "vol_spike",
+        "vol_klinger",
+        "cmf_signal",
+        "vol_trend",
+        "ad_distribution",
+        "vol_momentum",
+        "cmf_extreme",
+        "vol_silhouette",
+        "obv_on_balance_reversal",
+        "vwap_breakout",
+        "vol_session",
+        "vwap_reversion",
+        "vol_price_divergence",
+        "obv_negative_volume",
+        "vol_surge_followthru",
+        "obv_divergence",
+        "vol_profile_support",
+        "mfi_oversold",
+        "cmf_extreme_neg",
+        "mfi_divergence",
+        "obv_trend",
+        "cmf_divergence",
+        "ad_accumulation"
+      ]
+    },
+    "candle_patterns": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "outside_bar",
+        "piercing_line",
+        "three_white_soldiers",
+        "marubozu",
+        "belt_hold_bullish",
+        "tweezers_bottom",
+        "breakaway_bullish",
+        "shooting_star",
+        "upside_gap",
+        "unique_three",
+        "downside_gap",
+        "three_black_crows",
+        "three_inside_down",
+        "three_outside_down",
+        "abandoned_baby",
+        "rising_three_methods",
+        "falling_three_methods",
+        "breakaway_bearish",
+        "tower_bottom",
+        "tower_top",
+        "dark_cloud_cover",
+        "evening_star",
+        "hanging_man",
+        "bullish_engulfing",
+        "bearish_engulfing_reversal",
+        "three_outside_up",
+        "river_top",
+        "river_bottom",
+        "morning_star",
+        "stalled_pattern",
+        "three_inside_up",
+        "mat_hold",
+        "belt_hold_bearish",
+        "inverted_hammer",
+        "advance_block",
+        "hammer",
+        "kick_pattern",
+        "long_legged_doji",
+        "gravestone_doji",
+        "dragonfly_doji",
+        "thrusting",
+        "separating_lines",
+        "spinning_top",
+        "harami_cross",
+        "doji",
+        "harami",
+        "inside_bar",
+        "counterattack",
+        "in_on_neck",
+        "tweezers_top"
+      ]
+    },
+    "statistical": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "spectral_analysis",
+        "mutual_information",
+        "fourier_analysis",
+        "robust_regression",
+        "lasso_regression",
+        "gamma_regression",
+        "dynamic_factor",
+        "multinomial_regression",
+        "unit_root",
+        "impulse_response",
+        "kalman_filter",
+        "factor_analysis",
+        "detrended_fluctuation",
+        "change_point",
+        "ridge_regression",
+        "cross_correlation",
+        "extreme_value",
+        "markov_switching",
+        "entropy_measure",
+        "transfer_entropy",
+        "partial_autocorrelation",
+        "bayesian_regression",
+        "hurst_exponent",
+        "garch_forecast",
+        "granger_causality",
+        "fractal_dimension",
+        "elastic_net",
+        "autocorrelation",
+        "time_series_decomposition",
+        "survival_analysis",
+        "runs_test",
+        "hidden_markov",
+        "cluster_analysis",
+        "pca_signal",
+        "variance_ratio",
+        "long_memory",
+        "spline_regression",
+        "polynomial_regression",
+        "ornstein_uhlenbeck",
+        "cointegration",
+        "regime_detection",
+        "state_space",
+        "local_regression",
+        "copula_signal",
+        "distance_method",
+        "volatility_clustering",
+        "quantile_regression",
+        "linear_regression",
+        "wavelet_analysis",
+        "logistic_regression"
+      ]
+    },
+    "time_based": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "time_decay_signal",
+        "momentum_acceleration",
+        "time_weighted_volume",
+        "odd_hours",
+        "even_hours",
+        "weekend_effect",
+        "first_half_hour",
+        "friday_effect",
+        "circadian_rhythm",
+        "monday_effect",
+        "time_since_high",
+        "prime_hours",
+        "morning_momentum",
+        "candle_sequence_length",
+        "daily_cycle",
+        "asia_open",
+        "hour_0",
+        "hour_12",
+        "turn_of_month",
+        "weekly_cycle",
+        "biweekly_cycle",
+        "monthly_cycle",
+        "lunar_cycle",
+        "run_length",
+        "exhaustion_timing",
+        "overnight_drift",
+        "time_in_trend",
+        "harmonic_timing",
+        "us_market_close",
+        "golden_ratio_timing",
+        "afternoon_reversal",
+        "us_market_open",
+        "london_open",
+        "breakout_timing",
+        "session_close",
+        "square_hours",
+        "power_of_2_hours",
+        "triangular_numbers",
+        "hourly_cycle",
+        "intraday_mean_revert",
+        "session_open",
+        "inter_candle_gap",
+        "time_since_low",
+        "fibonacci_hours",
+        "first_quarter_hour",
+        "market_microstructure",
+        "second_half_hour",
+        "consolidation_duration",
+        "last_quarter_hour",
+        "candle_age_entry"
+      ]
+    },
+    "cross_asset": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "basis_trade",
+        "cross_momentum",
+        "style_rotation",
+        "cross_flow",
+        "inter_market",
+        "crypto_market",
+        "inter_commodity",
+        "cross_cycle",
+        "eth_correlation",
+        "derivatives_market",
+        "cross_seasonal",
+        "cross_asset_volume",
+        "liquidity_factor",
+        "commodity_market",
+        "stock_market",
+        "cross_currency",
+        "sentiment_factor",
+        "bond_market",
+        "futures_market",
+        "market_cap_rotation",
+        "options_market",
+        "real_estate",
+        "triangular_arbitrage",
+        "btc_beta",
+        "sector_rotation",
+        "cross_asset_momentum",
+        "cross_asset_reversion",
+        "cross_asset_breakout",
+        "cross_asset_volatility",
+        "cross_asset_pattern",
+        "credit_market",
+        "money_market",
+        "convergence_trade",
+        "cross_volatility",
+        "cross_regime",
+        "macro_factor",
+        "risk_factor",
+        "volatility_factor",
+        "forex_market",
+        "style_factor",
+        "cross_sentiment",
+        "factor_rotation",
+        "pairs_trading_cross",
+        "cross_liquidity",
+        "statistical_arbitrage",
+        "calendar_spread",
+        "return_factor",
+        "micro_factor",
+        "spot_market",
+        "arbitrage"
+      ]
+    },
+    "hybrid": {
+      "target": 50,
+      "tested": 50,
+      "status": "in_progress",
+      "strategies": [
+        "ma_atr",
+        "hybrid_deep",
+        "hybrid_svm",
+        "cross_asset_volatility",
+        "ensemble_dynamic",
+        "hybrid_genetic",
+        "hybrid_ml",
+        "ensemble_simple",
+        "ensemble_weighted",
+        "momentum_volatility",
+        "multi_timeframe",
+        "cross_asset_momentum",
+        "trend_volatility",
+        "hybrid_neuro",
+        "pattern_volatility",
+        "momentum_volume",
+        "multi_cycle",
+        "trend_volume",
+        "hybrid_forest",
+        "cross_asset_volume",
+        "trend_pattern",
+        "pattern_volume",
+        "ma_breakout",
+        "hybrid_fuzzy",
+        "hybrid_reinforcement",
+        "breakout_momentum",
+        "breakout_volume",
+        "hybrid_boost",
+        "ensemble_adaptive",
+        "time_volatility",
+        "multi_regime",
+        "rsi_volatility",
+        "multi_indicator",
+        "ma_volatility",
+        "breakout_volatility",
+        "multi_factor",
+        "hybrid_bayesian",
+        "mean_reversion_volatility",
+        "statistical_time",
+        "ensemble_deep",
+        "statistical_volatility",
+        "time_volume",
+        "multi_asset",
+        "momentum_mean_reversion",
+        "rsi_momentum",
+        "rsi_volume",
+        "statistical_volume",
+        "mean_reversion_volume",
+        "hybrid_tree",
+        "ensemble_ml"
+      ]
+    }
+  },
+  "total_unique_strategies_tested": 468,
+  "total_target": 500,
+  "experiments": [
+    {
+      "id": 1,
+      "strategy": "vol_quantitative",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 684.09,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 2,
+      "strategy": "yang_zhang",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 315.28,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 3,
+      "strategy": "vol_breakout",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 246.45,
+        "hit_rate": 45.714285714285715,
+        "profitable_coins": 16
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 4,
+      "strategy": "atr_trailing",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 170.42,
+        "hit_rate": 60.0,
+        "profitable_coins": 21
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 5,
+      "strategy": "vol_reversion",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 141.34,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 6,
+      "strategy": "rogers_satchell",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 72.79,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 7,
+      "strategy": "vol_iqr",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 70.02,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 8,
+      "strategy": "bb_width_expansion",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 9,
+      "strategy": "vol_seasonal",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -11.21,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 10,
+      "strategy": "atr_contraction",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -16.9,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 11,
+      "strategy": "vol_cycle",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -35.81,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 12,
+      "strategy": "vol_wavelet",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -53.51,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 13,
+      "strategy": "vol_regime_switch",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -61.24,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 14,
+      "strategy": "vol_cross_sectional",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -66.07,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 15,
+      "strategy": "vol_markov",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -85.39,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 16,
+      "strategy": "vol_percentile",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -85.92,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 17,
+      "strategy": "vol_adaptive",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -110.09,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 18,
+      "strategy": "vol_stochastic",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -130.37,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 19,
+      "strategy": "garman_klass",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -157.19,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 20,
+      "strategy": "vol_rank",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -165.0,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 21,
+      "strategy": "vol_zscore",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -188.21,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 22,
+      "strategy": "vol_garch",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -200.06,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 23,
+      "strategy": "parkinson_vol",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -206.31,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 24,
+      "strategy": "vol_threshold",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -214.98,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 25,
+      "strategy": "atr_band",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -252.96,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 26,
+      "strategy": "vol_mad",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -258.26,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 27,
+      "strategy": "vol_momentum",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -260.76,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 28,
+      "strategy": "bb_width_squeeze",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -264.42,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 29,
+      "strategy": "vol_statistical",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -278.97,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 30,
+      "strategy": "vol_multi_asset",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -288.23,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 31,
+      "strategy": "vol_fourier",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -322.62,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 32,
+      "strategy": "vol_range",
+      "category": "volatility",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -333.65,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 33,
+      "strategy": "obv_positive_volume",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1516.9,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 34,
+      "strategy": "vol_force_index",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1128.99,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 35,
+      "strategy": "vol_cumulative_delta",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 859.11,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 36,
+      "strategy": "vol_ease_of_movement",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 708.44,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 37,
+      "strategy": "vol_oscillator",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 619.71,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 38,
+      "strategy": "vol_anomaly",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 617.05,
+        "hit_rate": 42.857142857142854,
+        "profitable_coins": 15
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 39,
+      "strategy": "vol_relative",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 578.22,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 40,
+      "strategy": "vol_chaikin_osc",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 501.98,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 41,
+      "strategy": "vol_weighted",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 450.88,
+        "hit_rate": 65.71428571428571,
+        "profitable_coins": 23
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 42,
+      "strategy": "obv_breakout",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 410.49,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 43,
+      "strategy": "vol_spike",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 394.96,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 44,
+      "strategy": "vol_klinger",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 341.43,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 45,
+      "strategy": "cmf_signal",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 324.23,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 46,
+      "strategy": "vol_trend",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 136.55,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 47,
+      "strategy": "ad_distribution",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 133.06,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 48,
+      "strategy": "vol_momentum",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 109.98,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 49,
+      "strategy": "cmf_extreme",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 99.11,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 50,
+      "strategy": "vol_silhouette",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 89.31,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 51,
+      "strategy": "obv_on_balance_reversal",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 30.33,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 52,
+      "strategy": "vwap_breakout",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 21.0,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 53,
+      "strategy": "vol_session",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 5.2,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 54,
+      "strategy": "vwap_reversion",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -12.99,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 55,
+      "strategy": "vol_price_divergence",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -21.07,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 56,
+      "strategy": "obv_negative_volume",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -70.2,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 57,
+      "strategy": "vol_surge_followthru",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -93.38,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 58,
+      "strategy": "obv_divergence",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -136.97,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 59,
+      "strategy": "vol_profile_support",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -165.07,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 60,
+      "strategy": "mfi_oversold",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -181.85,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 61,
+      "strategy": "cmf_extreme_neg",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -190.49,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 62,
+      "strategy": "mfi_divergence",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -192.69,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 63,
+      "strategy": "obv_trend",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -193.02,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 64,
+      "strategy": "cmf_divergence",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -201.5,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 65,
+      "strategy": "ad_accumulation",
+      "category": "volume",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -254.26,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 66,
+      "strategy": "outside_bar",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 250.22,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 67,
+      "strategy": "piercing_line",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 204.55,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 68,
+      "strategy": "three_white_soldiers",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 161.72,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 69,
+      "strategy": "marubozu",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 141.51,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 70,
+      "strategy": "belt_hold_bullish",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 139.03,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 71,
+      "strategy": "tweezers_bottom",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 61.37,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 72,
+      "strategy": "breakaway_bullish",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 49.38,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 73,
+      "strategy": "shooting_star",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 23.63,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 74,
+      "strategy": "upside_gap",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 13.83,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 75,
+      "strategy": "unique_three",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 9.8,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 76,
+      "strategy": "downside_gap",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 2.51,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 77,
+      "strategy": "three_black_crows",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 78,
+      "strategy": "three_inside_down",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 79,
+      "strategy": "three_outside_down",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 80,
+      "strategy": "abandoned_baby",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 81,
+      "strategy": "rising_three_methods",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 82,
+      "strategy": "falling_three_methods",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 83,
+      "strategy": "breakaway_bearish",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 84,
+      "strategy": "tower_bottom",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -0.83,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 85,
+      "strategy": "tower_top",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -0.83,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 86,
+      "strategy": "dark_cloud_cover",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -1.49,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 87,
+      "strategy": "evening_star",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.25,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 88,
+      "strategy": "hanging_man",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.31,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 89,
+      "strategy": "bullish_engulfing",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -6.25,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 90,
+      "strategy": "bearish_engulfing_reversal",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -13.07,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 91,
+      "strategy": "three_outside_up",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -14.59,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 92,
+      "strategy": "river_top",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -15.41,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 93,
+      "strategy": "river_bottom",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -17.92,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 94,
+      "strategy": "morning_star",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -18.76,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 95,
+      "strategy": "stalled_pattern",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -18.89,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 96,
+      "strategy": "three_inside_up",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -24.49,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 97,
+      "strategy": "mat_hold",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -35.96,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 98,
+      "strategy": "belt_hold_bearish",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -49.89,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 99,
+      "strategy": "inverted_hammer",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -51.31,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 100,
+      "strategy": "advance_block",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -74.93,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 101,
+      "strategy": "hammer",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -82.07,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 102,
+      "strategy": "kick_pattern",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -87.99,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 103,
+      "strategy": "long_legged_doji",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -99.55,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 104,
+      "strategy": "gravestone_doji",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -107.89,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 105,
+      "strategy": "dragonfly_doji",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -114.85,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 106,
+      "strategy": "thrusting",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -123.18,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 107,
+      "strategy": "separating_lines",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -168.88,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 108,
+      "strategy": "spinning_top",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -170.11,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 109,
+      "strategy": "harami_cross",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -221.98,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 110,
+      "strategy": "doji",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -235.86,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 111,
+      "strategy": "harami",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -251.38,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 112,
+      "strategy": "inside_bar",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -273.19,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 113,
+      "strategy": "counterattack",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -273.5,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 114,
+      "strategy": "in_on_neck",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -275.17,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 115,
+      "strategy": "tweezers_top",
+      "category": "candle_patterns",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -318.18,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 116,
+      "strategy": "spectral_analysis",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1516.57,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 117,
+      "strategy": "mutual_information",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1425.32,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 118,
+      "strategy": "fourier_analysis",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1259.49,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 119,
+      "strategy": "robust_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1067.64,
+        "hit_rate": 60.0,
+        "profitable_coins": 24
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 120,
+      "strategy": "lasso_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 670.96,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 121,
+      "strategy": "gamma_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 659.41,
+        "hit_rate": 30.0,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 122,
+      "strategy": "dynamic_factor",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 617.03,
+        "hit_rate": 27.500000000000004,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 123,
+      "strategy": "multinomial_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 459.99,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 124,
+      "strategy": "unit_root",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 383.22,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 125,
+      "strategy": "impulse_response",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 332.16,
+        "hit_rate": 10.0,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 126,
+      "strategy": "kalman_filter",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 315.32,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 127,
+      "strategy": "factor_analysis",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 273.87,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 128,
+      "strategy": "detrended_fluctuation",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 270.84,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 129,
+      "strategy": "change_point",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 270.13,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 130,
+      "strategy": "ridge_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 139.92,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 131,
+      "strategy": "cross_correlation",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 127.9,
+        "hit_rate": 35.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 132,
+      "strategy": "extreme_value",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 97.25,
+        "hit_rate": 5.0,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 133,
+      "strategy": "markov_switching",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 56.18,
+        "hit_rate": 20.0,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 134,
+      "strategy": "entropy_measure",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 50.44,
+        "hit_rate": 37.5,
+        "profitable_coins": 15
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 135,
+      "strategy": "transfer_entropy",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1.65,
+        "hit_rate": 10.0,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 136,
+      "strategy": "partial_autocorrelation",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1.62,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 137,
+      "strategy": "bayesian_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0.29,
+        "hit_rate": 2.5,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 138,
+      "strategy": "hurst_exponent",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 139,
+      "strategy": "garch_forecast",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 140,
+      "strategy": "granger_causality",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 141,
+      "strategy": "fractal_dimension",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 142,
+      "strategy": "elastic_net",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -4.51,
+        "hit_rate": 5.0,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 143,
+      "strategy": "autocorrelation",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -6.1,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 144,
+      "strategy": "time_series_decomposition",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -21.35,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 145,
+      "strategy": "survival_analysis",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -32.44,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 146,
+      "strategy": "runs_test",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -40.64,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 147,
+      "strategy": "hidden_markov",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -41.12,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 148,
+      "strategy": "cluster_analysis",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -52.41,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 149,
+      "strategy": "pca_signal",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -53.54,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 150,
+      "strategy": "variance_ratio",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -65.52,
+        "hit_rate": 20.0,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 151,
+      "strategy": "long_memory",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -69.83,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 152,
+      "strategy": "spline_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -71.89,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 153,
+      "strategy": "polynomial_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -79.7,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 154,
+      "strategy": "ornstein_uhlenbeck",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -108.46,
+        "hit_rate": 20.0,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 155,
+      "strategy": "cointegration",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -153.69,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 156,
+      "strategy": "regime_detection",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -159.37,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 157,
+      "strategy": "state_space",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -187.1,
+        "hit_rate": 5.0,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 158,
+      "strategy": "local_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -191.96,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 159,
+      "strategy": "copula_signal",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -194.49,
+        "hit_rate": 10.0,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 160,
+      "strategy": "distance_method",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -195.27,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 161,
+      "strategy": "volatility_clustering",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -205.81,
+        "hit_rate": 10.0,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 162,
+      "strategy": "quantile_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -268.52,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 163,
+      "strategy": "linear_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -297.28,
+        "hit_rate": 5.0,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 164,
+      "strategy": "wavelet_analysis",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -358.05,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 165,
+      "strategy": "logistic_regression",
+      "category": "statistical",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -465.01,
+        "hit_rate": 7.5,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 166,
+      "strategy": "time_decay_signal",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 2139.72,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 167,
+      "strategy": "momentum_acceleration",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1226.61,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 168,
+      "strategy": "time_weighted_volume",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 558.83,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 169,
+      "strategy": "odd_hours",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 312.86,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 170,
+      "strategy": "even_hours",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 166.1,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 171,
+      "strategy": "weekend_effect",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 100.87,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 172,
+      "strategy": "first_half_hour",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 93.54,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 173,
+      "strategy": "friday_effect",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 53.55,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 174,
+      "strategy": "circadian_rhythm",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 37.8,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 175,
+      "strategy": "monday_effect",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 30.01,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 176,
+      "strategy": "time_since_high",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 13.6,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 177,
+      "strategy": "prime_hours",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 7.38,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 178,
+      "strategy": "morning_momentum",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 4.08,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 179,
+      "strategy": "candle_sequence_length",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1.22,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 180,
+      "strategy": "daily_cycle",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.84,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 181,
+      "strategy": "asia_open",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 182,
+      "strategy": "hour_0",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 183,
+      "strategy": "hour_12",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 184,
+      "strategy": "turn_of_month",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 185,
+      "strategy": "weekly_cycle",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 186,
+      "strategy": "biweekly_cycle",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 187,
+      "strategy": "monthly_cycle",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 188,
+      "strategy": "lunar_cycle",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 189,
+      "strategy": "run_length",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 190,
+      "strategy": "exhaustion_timing",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 191,
+      "strategy": "overnight_drift",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.12,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 192,
+      "strategy": "time_in_trend",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -11.58,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 193,
+      "strategy": "harmonic_timing",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -15.54,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 194,
+      "strategy": "us_market_close",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -19.71,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 195,
+      "strategy": "golden_ratio_timing",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -24.28,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 196,
+      "strategy": "afternoon_reversal",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -25.28,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 197,
+      "strategy": "us_market_open",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -31.38,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 198,
+      "strategy": "london_open",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -38.15,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 199,
+      "strategy": "breakout_timing",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -41.27,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 200,
+      "strategy": "session_close",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -43.37,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 201,
+      "strategy": "square_hours",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -45.95,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 202,
+      "strategy": "power_of_2_hours",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -58.5,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 203,
+      "strategy": "triangular_numbers",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -60.23,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 204,
+      "strategy": "hourly_cycle",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -68.56,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 205,
+      "strategy": "intraday_mean_revert",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -85.97,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 206,
+      "strategy": "session_open",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -109.48,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 207,
+      "strategy": "inter_candle_gap",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -111.08,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 208,
+      "strategy": "time_since_low",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -111.57,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 209,
+      "strategy": "fibonacci_hours",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -157.01,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 210,
+      "strategy": "first_quarter_hour",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -168.91,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 211,
+      "strategy": "market_microstructure",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -248.25,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 212,
+      "strategy": "second_half_hour",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -264.84,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 213,
+      "strategy": "consolidation_duration",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -286.94,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 214,
+      "strategy": "last_quarter_hour",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -289.02,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 215,
+      "strategy": "candle_age_entry",
+      "category": "time_based",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -308.03,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 216,
+      "strategy": "basis_trade",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1308.72,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 217,
+      "strategy": "cross_momentum",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1233.73,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 218,
+      "strategy": "style_rotation",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1051.57,
+        "hit_rate": 52.5,
+        "profitable_coins": 21
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 219,
+      "strategy": "cross_flow",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 1043.59,
+        "hit_rate": 20.0,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 220,
+      "strategy": "inter_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 761.8,
+        "hit_rate": 27.500000000000004,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 221,
+      "strategy": "crypto_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 635.85,
+        "hit_rate": 30.0,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 222,
+      "strategy": "inter_commodity",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 624.02,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 223,
+      "strategy": "cross_cycle",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 583.94,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 224,
+      "strategy": "eth_correlation",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 509.07,
+        "hit_rate": 55.00000000000001,
+        "profitable_coins": 22
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 225,
+      "strategy": "derivatives_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 277.78,
+        "hit_rate": 27.500000000000004,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 226,
+      "strategy": "cross_seasonal",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 262.95,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 227,
+      "strategy": "cross_asset_volume",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 248.03,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 228,
+      "strategy": "liquidity_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 218.28,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 229,
+      "strategy": "commodity_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 200.42,
+        "hit_rate": 27.500000000000004,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 230,
+      "strategy": "stock_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 192.28,
+        "hit_rate": 32.5,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 231,
+      "strategy": "cross_currency",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 191.37,
+        "hit_rate": 27.500000000000004,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 232,
+      "strategy": "sentiment_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 168.04,
+        "hit_rate": 30.0,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 233,
+      "strategy": "bond_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 166.73,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 234,
+      "strategy": "futures_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 160.06,
+        "hit_rate": 17.5,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 235,
+      "strategy": "market_cap_rotation",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 102.48,
+        "hit_rate": 47.5,
+        "profitable_coins": 19
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 236,
+      "strategy": "options_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 40.01,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 237,
+      "strategy": "real_estate",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 33.78,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 238,
+      "strategy": "triangular_arbitrage",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 16.17,
+        "hit_rate": 25.0,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 239,
+      "strategy": "btc_beta",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 240,
+      "strategy": "sector_rotation",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 241,
+      "strategy": "cross_asset_momentum",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 242,
+      "strategy": "cross_asset_reversion",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 243,
+      "strategy": "cross_asset_breakout",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 244,
+      "strategy": "cross_asset_volatility",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 245,
+      "strategy": "cross_asset_pattern",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 246,
+      "strategy": "credit_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 247,
+      "strategy": "money_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 248,
+      "strategy": "convergence_trade",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 249,
+      "strategy": "cross_volatility",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 250,
+      "strategy": "cross_regime",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 251,
+      "strategy": "macro_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 252,
+      "strategy": "risk_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 253,
+      "strategy": "volatility_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": 0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 254,
+      "strategy": "forex_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -1.5,
+        "hit_rate": 20.0,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 255,
+      "strategy": "style_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -7.18,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 256,
+      "strategy": "cross_sentiment",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -39.07,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 257,
+      "strategy": "factor_rotation",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -70.03,
+        "hit_rate": 22.5,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 258,
+      "strategy": "pairs_trading_cross",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -102.11,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 259,
+      "strategy": "cross_liquidity",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -109.71,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 260,
+      "strategy": "statistical_arbitrage",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -162.25,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 261,
+      "strategy": "calendar_spread",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -189.11,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 262,
+      "strategy": "return_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -250.41,
+        "hit_rate": 15.0,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 263,
+      "strategy": "micro_factor",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -262.19,
+        "hit_rate": 12.5,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 264,
+      "strategy": "spot_market",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -353.92,
+        "hit_rate": 10.0,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 265,
+      "strategy": "arbitrage",
+      "category": "cross_asset",
+      "coins_tested": 40,
+      "results": {
+        "total_net_pnl": -599.67,
+        "hit_rate": 2.5,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 266,
+      "strategy": "ma_atr",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1953.87,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 267,
+      "strategy": "hybrid_deep",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1708.11,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 268,
+      "strategy": "hybrid_svm",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1342.24,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 269,
+      "strategy": "cross_asset_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1243.61,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 270,
+      "strategy": "ensemble_dynamic",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1213.3,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 271,
+      "strategy": "hybrid_genetic",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1203.13,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 272,
+      "strategy": "hybrid_ml",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1114.22,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 273,
+      "strategy": "ensemble_simple",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1110.85,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 274,
+      "strategy": "ensemble_weighted",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1110.85,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 275,
+      "strategy": "momentum_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1096.64,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 276,
+      "strategy": "multi_timeframe",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1066.84,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 277,
+      "strategy": "cross_asset_momentum",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 981.45,
+        "hit_rate": 42.857142857142854,
+        "profitable_coins": 15
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 278,
+      "strategy": "trend_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 919.79,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 279,
+      "strategy": "hybrid_neuro",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 851.3,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 280,
+      "strategy": "pattern_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 814.96,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 281,
+      "strategy": "momentum_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 714.65,
+        "hit_rate": 51.42857142857142,
+        "profitable_coins": 18
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 282,
+      "strategy": "multi_cycle",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 700.44,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 283,
+      "strategy": "trend_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 579.15,
+        "hit_rate": 48.57142857142857,
+        "profitable_coins": 17
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 284,
+      "strategy": "hybrid_forest",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 567.69,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 285,
+      "strategy": "cross_asset_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 551.36,
+        "hit_rate": 51.42857142857142,
+        "profitable_coins": 18
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 286,
+      "strategy": "trend_pattern",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 507.76,
+        "hit_rate": 74.28571428571429,
+        "profitable_coins": 26
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 287,
+      "strategy": "pattern_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 497.57,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 288,
+      "strategy": "ma_breakout",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 477.22,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 289,
+      "strategy": "hybrid_fuzzy",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 449.68,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 290,
+      "strategy": "hybrid_reinforcement",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 447.45,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 291,
+      "strategy": "breakout_momentum",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 411.12,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 292,
+      "strategy": "breakout_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 353.04,
+        "hit_rate": 48.57142857142857,
+        "profitable_coins": 17
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 293,
+      "strategy": "hybrid_boost",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 163.52,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 294,
+      "strategy": "ensemble_adaptive",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 151.58,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 295,
+      "strategy": "time_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 150.68,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 296,
+      "strategy": "multi_regime",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 107.07,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 297,
+      "strategy": "rsi_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 9.27,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 298,
+      "strategy": "multi_indicator",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 3.43,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 299,
+      "strategy": "ma_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 300,
+      "strategy": "breakout_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 301,
+      "strategy": "multi_factor",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 302,
+      "strategy": "hybrid_bayesian",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 303,
+      "strategy": "mean_reversion_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -0.7,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 304,
+      "strategy": "statistical_time",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -3.21,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 305,
+      "strategy": "ensemble_deep",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.52,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 306,
+      "strategy": "statistical_volatility",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.58,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 307,
+      "strategy": "time_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -5.36,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 308,
+      "strategy": "multi_asset",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -6.18,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 309,
+      "strategy": "momentum_mean_reversion",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -7.27,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 310,
+      "strategy": "rsi_momentum",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -19.93,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 311,
+      "strategy": "rsi_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -31.23,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 312,
+      "strategy": "statistical_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -33.75,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 313,
+      "strategy": "mean_reversion_volume",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -46.86,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 314,
+      "strategy": "hybrid_tree",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -67.77,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 315,
+      "strategy": "ensemble_ml",
+      "category": "hybrid",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -74.15,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 316,
+      "strategy": "wavelet_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 471.76,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 317,
+      "strategy": "gap_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 345.52,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 318,
+      "strategy": "cross_sectional_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 71.13,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 319,
+      "strategy": "macd_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 43.78,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 320,
+      "strategy": "ratio_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 20.25,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 321,
+      "strategy": "momentum_reversion_hybrid",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 10.24,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 322,
+      "strategy": "factor_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 2.71,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 323,
+      "strategy": "correlation_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 2.47,
+        "hit_rate": 2.857142857142857,
+        "profitable_coins": 1
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 324,
+      "strategy": "time_decay_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.4,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 325,
+      "strategy": "residual_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 326,
+      "strategy": "breakout_reversion_hybrid",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 327,
+      "strategy": "snap_back",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 328,
+      "strategy": "anchored_vwap_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -0.19,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 329,
+      "strategy": "ema_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.62,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 330,
+      "strategy": "spread_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.62,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 331,
+      "strategy": "volatility_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.97,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 332,
+      "strategy": "dynamic_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -5.57,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 333,
+      "strategy": "roc_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -7.45,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 334,
+      "strategy": "fourier_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -10.31,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 335,
+      "strategy": "vwap_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -12.8,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 336,
+      "strategy": "sma_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -14.56,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 337,
+      "strategy": "exhaustion_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -15.01,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 338,
+      "strategy": "kalman_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -16.35,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 339,
+      "strategy": "sector_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -16.62,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 340,
+      "strategy": "volume_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -19.01,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 341,
+      "strategy": "bb_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -22.29,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 342,
+      "strategy": "seasonal_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -22.55,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 343,
+      "strategy": "panic_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -26.86,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 344,
+      "strategy": "std_dev_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -32.77,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 345,
+      "strategy": "pairs_trading",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -32.77,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 346,
+      "strategy": "distance_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -32.77,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 347,
+      "strategy": "beta_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -32.77,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 348,
+      "strategy": "mad_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -36.35,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 349,
+      "strategy": "zscore_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -36.93,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 350,
+      "strategy": "hurst_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -37.48,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 351,
+      "strategy": "weighted_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -42.59,
+        "hit_rate": 5.714285714285714,
+        "profitable_coins": 2
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 352,
+      "strategy": "adaptive_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -43.97,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 353,
+      "strategy": "cointegration",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -56.86,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 354,
+      "strategy": "rsi_divergence",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -67.83,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 355,
+      "strategy": "percentile_channel",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -100.27,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 356,
+      "strategy": "entropy_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -117.65,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 357,
+      "strategy": "pattern_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -121.67,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 358,
+      "strategy": "regime_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -124.97,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 359,
+      "strategy": "capitulation_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -127.62,
+        "hit_rate": 8.571428571428571,
+        "profitable_coins": 3
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 360,
+      "strategy": "ou_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -149.51,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 361,
+      "strategy": "stochastic_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -171.69,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 362,
+      "strategy": "williams_r_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -171.69,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 363,
+      "strategy": "cci_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -176.87,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 364,
+      "strategy": "rank_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -218.8,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 365,
+      "strategy": "cycle_reversion",
+      "category": "mean_reversion",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -231.74,
+        "hit_rate": 14.285714285714285,
+        "profitable_coins": 5
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 366,
+      "strategy": "fibonacci_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 2179.96,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 367,
+      "strategy": "pivot_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 1114.32,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 368,
+      "strategy": "momentum_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 944.81,
+        "hit_rate": 62.857142857142854,
+        "profitable_coins": 22
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 369,
+      "strategy": "breakout_ml",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 724.1,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 370,
+      "strategy": "breakout_hybrid",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 615.94,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 371,
+      "strategy": "trend_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 549.95,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 372,
+      "strategy": "breakout_regime",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 548.48,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 373,
+      "strategy": "breakout_statistical",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 546.07,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 374,
+      "strategy": "breakout_trend",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 529.31,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 375,
+      "strategy": "breakout_quantitative",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 527.58,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 376,
+      "strategy": "breakout_ensemble",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 503.33,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 377,
+      "strategy": "breakout_momentum",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 502.83,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 378,
+      "strategy": "breakout_filter",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 496.72,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 379,
+      "strategy": "opening_range_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 482.53,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 380,
+      "strategy": "volatility_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 424.05,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 381,
+      "strategy": "keltner_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 419.15,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 382,
+      "strategy": "breakout_adaptive",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 415.74,
+        "hit_rate": 45.714285714285715,
+        "profitable_coins": 16
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 383,
+      "strategy": "volume_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 411.89,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 384,
+      "strategy": "breakout_volume",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 406.78,
+        "hit_rate": 71.42857142857143,
+        "profitable_coins": 25
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 385,
+      "strategy": "breakout_position_sizing",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 400.25,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 386,
+      "strategy": "multi_timeframe_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 380.22,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 387,
+      "strategy": "atr_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 324.91,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 388,
+      "strategy": "channel_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 324.07,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 389,
+      "strategy": "breakout_pullback",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 245.38,
+        "hit_rate": 45.714285714285715,
+        "profitable_coins": 16
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 390,
+      "strategy": "breakout_expansion",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 243.7,
+        "hit_rate": 45.714285714285715,
+        "profitable_coins": 16
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 391,
+      "strategy": "breakout_reversion",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 147.15,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 392,
+      "strategy": "breakout_multi_asset",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 133.93,
+        "hit_rate": 34.285714285714285,
+        "profitable_coins": 12
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 393,
+      "strategy": "breakout_cross_sectional",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 105.63,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 394,
+      "strategy": "breakout_timing",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 100.15,
+        "hit_rate": 40.0,
+        "profitable_coins": 14
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 395,
+      "strategy": "breakout_pattern",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 98.63,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 396,
+      "strategy": "breakout_portfolio",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 57.28,
+        "hit_rate": 28.57142857142857,
+        "profitable_coins": 10
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 397,
+      "strategy": "gap_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 55.37,
+        "hit_rate": 11.428571428571429,
+        "profitable_coins": 4
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 398,
+      "strategy": "breakout_squeeze",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 53.54,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 399,
+      "strategy": "breakout_validation",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 25.86,
+        "hit_rate": 37.142857142857146,
+        "profitable_coins": 13
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 400,
+      "strategy": "donchian_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 401,
+      "strategy": "false_breakout_reversal",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 402,
+      "strategy": "breakout_confluence",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 403,
+      "strategy": "breakout_volatility",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 404,
+      "strategy": "inside_bar_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": 0.0,
+        "hit_rate": 0.0,
+        "profitable_coins": 0
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 405,
+      "strategy": "breakout_continuation",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -4.57,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 406,
+      "strategy": "pattern_breakout",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -6.29,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 407,
+      "strategy": "breakout_signal",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -25.98,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 408,
+      "strategy": "breakout_confirmation",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -32.93,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 409,
+      "strategy": "breakout_retest",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -35.56,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 410,
+      "strategy": "breakout_dynamic",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -47.51,
+        "hit_rate": 31.428571428571427,
+        "profitable_coins": 11
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 411,
+      "strategy": "breakout_contraction",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -68.61,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 412,
+      "strategy": "breakout_risk",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -78.59,
+        "hit_rate": 17.142857142857142,
+        "profitable_coins": 6
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 413,
+      "strategy": "breakout_exit",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -80.37,
+        "hit_rate": 25.71428571428571,
+        "profitable_coins": 9
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 414,
+      "strategy": "breakout_entry",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -95.73,
+        "hit_rate": 20.0,
+        "profitable_coins": 7
+      },
+      "status": "swept_7d"
+    },
+    {
+      "id": 415,
+      "strategy": "breakout_consolidation",
+      "category": "breakout",
+      "coins_tested": 35,
+      "results": {
+        "total_net_pnl": -124.46,
+        "hit_rate": 22.857142857142858,
+        "profitable_coins": 8
+      },
+      "status": "swept_7d"
+    }
+  ],
+  "next_batch": {
+    "batch_number": 11,
+    "target_count": 50,
+    "priority_categories": [
+      "momentum",
+      "breakout"
+    ],
+    "status": "ready",
+    "planned_strategies": [
+      {
+        "category": "volatility",
+        "strategy": "atr_expansion"
+      },
+      {
+        "category": "volatility",
+        "strategy": "bb_squeeze"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_contraction"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_expansion"
+      },
+      {
+        "category": "volatility",
+        "strategy": "historical_volatility"
+      },
+      {
+        "category": "volatility",
+        "strategy": "implied_volatility"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_ratio"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_breakout"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_reversion"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_momentum"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_trend"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_pattern"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_signal"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_filter"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_timing"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_entry"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_exit"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_risk"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_position_sizing"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_portfolio"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_adaptive"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_dynamic"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_regime"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_ml"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_ensemble"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_hybrid"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_multi_asset"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_cross_sectional"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_statistical"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_quantitative"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_cycle"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_seasonal"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_wavelet"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_fourier"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_garch"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_stochastic"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_markov"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_regime_switching"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_threshold"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_percentile"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_rank"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_zscore"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_mad"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_iqr"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_range"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_parkinson"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_garman_klass"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_yang_zhang"
+      },
+      {
+        "category": "volatility",
+        "strategy": "volatility_rogers_satchell"
+      },
+      {
+        "category": "volume",
+        "strategy": "obv"
+      }
+    ],
+    "notes": "420/500 (84%). Momentum supertrend ($3406) and breakout fibonacci ($2180) are new champions. momentum_breakout 62.9% hit rate!"
+  }
+}

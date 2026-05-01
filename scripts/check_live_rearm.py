@@ -1,0 +1,17 @@
+import json
+d = json.load(open('reports/penetration_lattice_live_source_state.json'))
+runner = d.get('runner', {})
+meta = d.get('metadata', {})
+print('live_rearm 941777:')
+print('  session_gate in metadata:', meta.get('session_gate', False))
+print('  session_gated in runner:', runner.get('session_gated', False))
+print('  gated_hour:', runner.get('gated_hour', '?'))
+print('  heartbeat:', runner.get('heartbeat_at', '?'))
+print('  consecutive_exceptions:', runner.get('consecutive_exceptions', '?'))
+symbols = d.get('symbols', {})
+for sym, data in symbols.items():
+    closes = data.get('realized_closes', '?')
+    net = data.get('realized_net_usd', '?')
+    opens = len(data.get('open_tickets', []))
+    rearm = data.get('rearm_opens', 0)
+    print('  %s: closes=%s, net=$%s, open=%d, rearm=%d' % (sym, closes, net, opens, rearm))

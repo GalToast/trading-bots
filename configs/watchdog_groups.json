@@ -1,0 +1,151 @@
+{
+  "groups": {
+    "fx_watchdog": {
+      "label": "FX",
+      "lanes": [
+        "live_nzdusd_adaptive_harness_941778",
+        "live_gbpusd_adaptive_harness_941777",
+        "live_eurusd_adaptive_harness_941885",
+        "live_usdjpy_adaptive_harness_941888",
+        "shadow_nzdusd_m15_btc_tight15",
+        "shadow_usdcad_m15_btc_tight15",
+        "live_eurusd_m1_snake_microharvest_941796",
+        "live_gbpusd_m1_snake_microharvest_941795",
+        "live_eurusd_m1_snake_hybrid_941798",
+        "live_gbpusd_m1_snake_hybrid_941797"
+      ]
+    },
+    "crypto_watchdog": {
+      "label": "Crypto",
+      "lanes": [
+        "live_btcusd_m15_warp_941781",
+        "live_solusd_m15_warp_v2_941891",
+        "live_xrpusd_m15_hh_breakout_941892",
+        "live_adausd_m15_warp_941893",
+        "live_ltcusd_m15_warp_941894",
+        "shadow_btcusd_m1_warp_mom100",
+        "shadow_btcusd_m15_warp_restore_v1",
+        "shadow_btcusd_m5_warp",
+        "shadow_xauusd_m5_warp",
+        "shadow_xauusd_m15_consolidation_vacuum",
+        "shadow_nas100_m5_warp",
+        "shadow_us30_m5_warp",
+        "shadow_ethusd_m5_structure_shapeshifter",
+        "shadow_gbpusd_m15_trend_harvest_v1",
+        "shadow_gbpusd_m15_hybrid_frontier_v1",
+        "shadow_xrpusd_m15_hungry_hippo_breakout_v1"
+      ]
+    },
+    "shadow_watchdog": {
+      "label": "Shadow",
+      "lanes": [
+        "shadow_momentum_alpha50",
+        "shadow_sg1bg1a100",
+        "shadow_cool12_alpha50",
+        "shadow_gbpusd_tick_forward_no_escape",
+        "shadow_fx_close_policy_mixed",
+        "shadow_fx_close_policy_mixed_session_gated",
+        "shadow_eurusd_m15_fxmicro",
+        "shadow_gbpusd_m15_fxmicro",
+        "shadow_nzdusd_m15_fxmicro",
+        "shadow_coinbase_btc_perp",
+        "shadow_coinbase_xrpusd_piranha",
+        "shadow_coinbase_dogeusd_piranha",
+        "shadow_coinbase_arbusd_rsi7",
+        "shadow_coinbase_lighterusd_rsi7",
+        "shadow_coinbase_vvvusd_rsi7",
+        "shadow_coinbase_prlusd_rsi7",
+        "shadow_coinbase_fartcoinusd_rsi7",
+        "shadow_coinbase_raveusd_rsi7",
+        "shadow_coinbase_mogusd_rsi4",
+        "shadow_coinbase_a8usd_rsi4",
+        "shadow_coinbase_experimental_rave_crown_jewel",
+        "shadow_coinbase_experimental_rave_rsi_exit_champion",
+        "shadow_coinbase_experimental_rave_stochrsi_champion",
+        "shadow_coinbase_experimental_rave_omni_champion",
+        "shadow_coinbase_experimental_rave_supreme_god_killer",
+        "shadow_coinbase_experimental_rsi_compound_god_mode",
+        "shadow_coinbase_experimental_rave_compound_ceiling",
+        "shadow_coinbase_experimental_rave_book_fortress",
+        "shadow_coinbase_experimental_apex_predator",
+        "shadow_coinbase_experimental_rave_apex_champion",
+        "shadow_coinbase_experimental_rave_m15_ranging",
+        "shadow_coinbase_burst_god_mode_live",
+        "shadow_coinbase_burst_roundrobin_compound",
+        "shadow_coinbase_burst_multicoin_rotation",
+        "unified_shadow_10symbol",
+        "shadow_usdjpy_gap2",
+        "shadow_eurusd_m5_snake_float_zero_v1",
+        "shadow_gbpusd_m5_snake_float_zero_v1"
+      ]
+    },
+    "feeder_crypto_canary": {
+      "label": "Feeder Crypto Canary",
+      "lanes": []
+    },
+    "feeder_crypto_m15_canary": {
+      "label": "Feeder Crypto M15 Canary",
+      "lanes": [
+        "shadow_btcusd_m15_warp",
+        "shadow_solusd_m15_warp_v2"
+      ]
+    },
+    "fx_m15_micro_canary": {
+      "label": "FX M15 Micro Bar",
+      "lanes": [
+        "shadow_fx_m15_micro_gbpusd_bar",
+        "shadow_fx_m15_micro_eurusd_bar",
+        "shadow_fx_m15_micro_nzdusd_bar"
+      ]
+    },
+    "coinbase_ratio_proof": {
+      "label": "Coinbase Ratio Proof Sleeves",
+      "lanes": [
+        "shadow_coinbase_cfgeth_ratio_sleeve",
+        "shadow_coinbase_cfgbtc_ratio_sleeve",
+        "shadow_coinbase_iotxeth_ratio_sleeve",
+        "shadow_coinbase_iotxbtc_ratio_sleeve"
+      ]
+    }
+  },
+  "crypto_watchdog": {
+    "lanes": [
+      "live_btcusd_m15_warp_941781",
+      "live_solusd_m15_warp_v2_941891",
+      "live_xrpusd_m15_hh_breakout_941892",
+      "live_adausd_m15_warp_941893",
+      "live_ltcusd_m15_warp_941894",
+      "shadow_btcusd_m1_warp_mom100",
+      "shadow_btcusd_m15_warp_restore_v1",
+      "shadow_btcusd_m5_warp",
+      "shadow_xauusd_m5_warp",
+      "shadow_xauusd_m15_consolidation_vacuum",
+      "shadow_nas100_m5_warp",
+      "shadow_us30_m5_warp",
+      "shadow_ethusd_m5_structure_shapeshifter",
+      "shadow_gbpusd_m15_trend_harvest_v1",
+      "shadow_gbpusd_m15_hybrid_frontier_v1"
+    ]
+  },
+  "fx_watchdog": {
+    "lanes": [
+      "shadow_nzdusd_m15_btc_tight15",
+      "shadow_usdcad_m15_btc_tight15",
+      "live_nzdusd_adaptive_harness_941778",
+      "live_gbpusd_adaptive_harness_941777",
+      "live_eurusd_adaptive_harness_941885",
+      "live_usdjpy_adaptive_harness_941888",
+      "shadow_gbpusd_m5_float_zero",
+      "live_eurusd_m1_snake_microharvest_941796",
+      "live_gbpusd_m1_snake_microharvest_941795",
+      "live_eurusd_m1_snake_hybrid_941798",
+      "live_gbpusd_m1_snake_hybrid_941797"
+    ]
+  },
+  "shadow_watchdog": {
+    "lanes": [
+      "shadow_eurusd_m5_snake_float_zero_v1",
+      "shadow_gbpusd_m5_snake_float_zero_v1"
+    ]
+  }
+}

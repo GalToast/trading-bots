@@ -1,0 +1,74 @@
+{
+  "version": "hungry_hippo_shapeshifter_v1",
+  "generated_at": "2026-04-16T04:27:59.262789+00:00",
+  "symbol": "AUDUSD",
+  "timeframe": "M15",
+  "deployable": false,
+  "deploy_reason": "Escape hatch enabled, regime-matched (TREND), 0.0x improvement over static",
+  "geometry": {
+    "step": 0.0004,
+    "step_buy": 0.00053333,
+    "step_sell": 0.00026667,
+    "asymmetric": true,
+    "asymmetry_ratio": 2.0,
+    "adaptive": {
+      "atr_scaled": true,
+      "atr_current": 0.0004,
+      "regime_coeff": 1.0,
+      "regime": "TREND"
+    }
+  },
+  "close": {
+    "alpha": 0.5,
+    "style": "all_profitable",
+    "gap": 1
+  },
+  "rearm": {
+    "variant": "rearm_lvl2_exc2",
+    "cooldown_bars": 12,
+    "momentum_gate": true
+  },
+  "risk": {
+    "max_floating_loss_usd": -15.0,
+    "max_open_per_side": 12,
+    "max_lattice_window_bars": 240,
+    "breakout_buffer_pips": 5.0
+  },
+  "escape_hatch": {
+    "tier1_breakeven": {
+      "max_bars": 20,
+      "max_loss": 1.0,
+      "description": "Close at breakeven after 20 bars if unprofitable"
+    },
+    "tier2_extreme": {
+      "cut_count": 1,
+      "max_loss_per_position": 5.0,
+      "description": "Cut worst 1 positions at extremes, max $5.0 each"
+    },
+    "tier3_full_kill": {
+      "max_floating_loss_usd": -15.0,
+      "description": "Last resort: kill all positions if net floating exceeds threshold"
+    }
+  },
+  "regime": {
+    "control_mode": "breakout_follow",
+    "regime": "TREND",
+    "gate_enabled": false
+  },
+  "performance": {
+    "static_net": 0.0,
+    "regime_matched_net": 0.0,
+    "improvement_factor": 0.0,
+    "static_closes": 0,
+    "regime_matched_closes": 0
+  },
+  "hungry_hippo_metadata": {
+    "asset_class": "fx",
+    "evidence_sources": {
+      "extreme_tuning_present": false,
+      "atr_params_present": false,
+      "regime_signal_present": true
+    },
+    "validation_status": "component_gap_research_only_missing_atr_or_regime_signal"
+  }
+}

@@ -1,0 +1,15 @@
+# Focused public verification path
+# The GitHub Actions suite uses only the Python standard library plus the
+# repo-local MetaTrader5 CI stub in tests/ci_stubs.
+
+# Common optional dependencies used by broader local research/operator scripts.
+numpy
+pandas
+scikit-learn
+requests
+PyJWT
+rich
+cryptography
+playwright
+ib-insync
+MetaTrader5; platform_system == "Windows"

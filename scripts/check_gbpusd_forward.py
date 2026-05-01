@@ -1,0 +1,12 @@
+import json
+d = json.load(open('reports/shadow_gbpusd_tick_forward_state.json'))
+dp = d.get('durable_proof', {})
+print('GBPUSD tick-forward:')
+print('  durable_closes:', dp.get('durable_realized_closes', '?'))
+print('  durable_net: $%s' % dp.get('durable_realized_net_usd', '?'))
+print('  durable_open_count:', dp.get('durable_open_count', '?'))
+print('  inventory_last_seen:', dp.get('inventory_last_seen_at', '?'))
+print('  counter_regressed:', dp.get('counter_regressed', '?'))
+runner = d.get('runner', {})
+print('  heartbeat:', runner.get('heartbeat_at', '?'))
+print('  cycles:', d.get('cycles', '?'))

@@ -1,0 +1,52 @@
+{
+  "name": "shadow_us30_m15_hungry_hippo_breakdown_sell_v1",
+  "kind": "shadow_index",
+  "state_path": "reports/penetration_lattice_shadow_us30_m15_hh_breakdown_sell_v1_state.json",
+  "event_path": "reports/penetration_lattice_shadow_us30_m15_hh_breakdown_sell_v1_events.jsonl",
+  "poll_seconds": 30,
+  "stale_after_seconds": 240,
+  "process_match_substrings": [
+    "scripts/live_penetration_lattice_tick_shadow.py",
+    "shadow_us30_m15_hh_breakdown_sell_v1_state.json"
+  ],
+  "restart_args": [
+    "scripts/live_penetration_lattice_tick_shadow.py",
+    "--symbol", "US30",
+    "--timeframe", "M15",
+    "--step", "101.11",
+    "--step-sell", "60.67",
+    "--step-buy", "141.56",
+    "--max-open-per-side", "12",
+    "--raw-close-alpha", "0.3",
+    "--raw-rearm-variant", "rearm_lvl2_exc2",
+    "--raw-rearm-cooldown-bars", "12",
+    "--raw-sell-gap", "1",
+    "--raw-buy-gap", "1",
+    "--poll-seconds", "30",
+    "--max-floating-loss-usd", "-15.0",
+    "--max-lattice-window-bars", "240",
+    "--state-path", "reports/penetration_lattice_shadow_us30_m15_hh_breakdown_sell_v1_state.json",
+    "--event-path", "reports/penetration_lattice_shadow_us30_m15_hh_breakdown_sell_v1_events.jsonl",
+    "--escape-hatch",
+    "--escape-max-bars", "10",
+    "--escape-max-loss", "10.0",
+    "--escape-cut-count", "1",
+    "--escape-max-cut-loss", "15.0"
+  ],
+  "enabled": false,
+  "watchdog_group": "index_watchdog",
+  "hungry_hippo_metadata": {
+    "personality": "SELL_TIGHT_BREAKDOWN",
+    "box_position": 0.0,
+    "box_bottom": 48420.0,
+    "box_top": 48613.0,
+    "structure": "breakdown_below",
+    "step_buy": 141.56,
+    "step_sell": 60.67,
+    "asymmetry": "SELL-tight (0.43)",
+    "alpha": 0.3,
+    "validation_status": "shadow_config_build_ready",
+    "deploy_priority": 4,
+    "risk_notes": "US30 breaking down below box support 48420. SELL-tight geometry to catch rallies in new range. step_sell=60.67 (0.8×ATR), step_buy=141.56 (1.2×ATR). Escape hatch Tier 0-3 wired. Box-aware geometry will auto-adjust."
+  }
+}

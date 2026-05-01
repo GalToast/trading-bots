@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trading Lane Presentation</title>
+  <style>
+    :root {
+      --ink: #13161c;
+      --muted: #5f6874;
+      --line: #d9dfe7;
+      --paper: #faf8f3;
+      --panel: rgba(255, 255, 255, 0.9);
+      --blue: #2a5ea8;
+      --rust: #9c5d33;
+      --sage: #4d745a;
+      --violet: #69519b;
+      --red: #a44b4b;
+      --amber: #9a7129;
+      --shadow: 0 18px 48px rgba(19, 22, 28, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(42, 94, 168, 0.10), transparent 28%),
+        radial-gradient(circle at 92% 0%, rgba(156, 93, 51, 0.10), transparent 24%),
+        linear-gradient(180deg, #f5efe3 0%, var(--paper) 22%, #f8f7f4 100%);
+      font-family: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(1220px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 32px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(217, 223, 231, 0.95);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+    }
+
+    .hero-main {
+      padding: 30px 32px 26px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--rust);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-family: Georgia, "Palatino Linotype", serif;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 11ch;
+    }
+
+    .dek {
+      margin: 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-side {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-side h2 {
+      margin: 0;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-side ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .hero-side li + li {
+      margin-top: 8px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .stat {
+      padding: 18px 18px 16px;
+      min-height: 122px;
+    }
+
+    .stat .num {
+      display: block;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 0.95;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .stat .label {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 40px);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .capability-grid,
+    .finding-grid,
+    .systems-grid,
+    .boundary-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .capability-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .finding-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .systems-grid,
+    .boundary-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel {
+      padding: 20px 22px 18px;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .panel p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .panel li + li {
+      margin-top: 8px;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .chip.blue { background: #eef3fb; color: var(--blue); border-color: #d8e3f5; }
+    .chip.sage { background: #edf6ef; color: var(--sage); border-color: #d7e8da; }
+    .chip.rust { background: #fbf0e8; color: var(--rust); border-color: #f0ddcf; }
+    .chip.violet { background: #f2eefb; color: var(--violet); border-color: #e1d8f6; }
+    .chip.red { background: #fceeee; color: var(--red); border-color: #f1d6d6; }
+    .chip.amber { background: #fbf4e7; color: var(--amber); border-color: #f1e2bd; }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .milestone {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+    }
+
+    .milestone .date {
+      font-weight: 700;
+      color: var(--rust);
+    }
+
+    .milestone strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .mermaid-card {
+      padding: 18px 18px 12px;
+    }
+
+    .mermaid {
+      min-width: 780px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mermaid-wrap {
+      overflow-x: auto;
+      padding-bottom: 6px;
+      background:
+        linear-gradient(180deg, rgba(251, 250, 247, 0.95), rgba(255,255,255,0.98)),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 29px,
+          rgba(217, 223, 231, 0.18) 29px,
+          rgba(217, 223, 231, 0.18) 30px
+        );
+      border-radius: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.84);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: rgba(248, 250, 253, 0.92);
+    }
+
+    td {
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .capability-grid,
+      .finding-grid,
+      .systems-grid,
+      .boundary-grid,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        width: min(100vw - 24px, 1220px);
+        padding-top: 18px;
+      }
+
+      .milestone {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="card hero-main">
+        <p class="eyebrow">Trading Lane Presentation</p>
+        <h1>What We Actually Built In The Trading Lab</h1>
+        <p class="dek">
+          A public snapshot of a broader trading research and operations platform: runtime engines, lattice systems,
+          adaptive controller research, proof boards, supervision infrastructure, and focused validation. The goal is
+          not to sell a black-box trading product. It is to show the scope and quality of the research-and-systems work while keeping
+          credentials, runtime state, and generated logs out of GitHub.
+        </p>
+      </div>
+      <aside class="card hero-side">
+        <h2>Presentation Thesis</h2>
+        <ul>
+          <li>This lane is bigger than one strategy and bigger than one controller.</li>
+          <li>The strongest signal is the combination of research doctrine, runtime tooling, and proof discipline.</li>
+          <li>The lane is impressive because it preserves negative evidence and still builds forward.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="stat-grid">
+      <article class="card stat">
+        <span class="num">2,100+</span>
+        <span class="label">Scripts</span>
+        <p>Research tools, runners, validators, diagnostics, and proof-board generators.</p>
+      </article>
+      <article class="card stat">
+        <span class="num">47</span>
+        <span class="label">Focused Tests</span>
+        <p>GitHub Actions verifies the highest-signal Kraken maker shadow unit surface.</p>
+      </article>
+      <article class="card stat">
+        <span class="num">6</span>
+        <span class="label">Public Docs</span>
+        <p>Curated documentation for protocol, proof, quickstart, performance, and review.</p>
+      </article>
+      <article class="card stat">
+        <span class="num">1</span>
+        <span class="label">Pages Site</span>
+        <p>Browser-readable presentation surface linked from the GitHub sidebar.</p>
+      </article>
+      <article class="card stat">
+        <span class="num">MIT</span>
+        <span class="label">License</span>
+        <p>Public portfolio snapshot with clear reuse terms and explicit boundaries.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Core Achievements</h2>
+          <p>The trading lane is a stack of research capabilities, not just a collection of strategy files.</p>
+        </div>
+      </div>
+      <div class="capability-grid">
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip blue">Core Runtime</span>
+            <span class="chip sage">Built</span>
+          </div>
+          <h3>Trading Engine And Bot Runtime</h3>
+          <p>Built a full MT5 runtime with supervisor, worker, config, exit engine, learning loop, health monitor, and extracted bot modules.</p>
+          <ul>
+            <li>Supervisor + worker split</li>
+            <li>Dedicated exit logic and health checking</li>
+            <li>Learning system with hot-streak sizing and ATR-scaled profit logic</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip blue">Penetration Lattice</span>
+            <span class="chip sage">Core Research</span>
+          </div>
+          <h3>Stopless Lattice Research Program</h3>
+          <p>The main lattice lane turned oscillation harvesting into a serious program with engine code, doctrine, live runners, and runner-modeled evidence.</p>
+          <ul>
+            <li>Tick-native lattice engine and live/shadow runners</li>
+            <li>Universal step thinking around range and ATR</li>
+            <li>Broker-truth emphasis over fantasy backtests</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip blue">Adaptive Research</span>
+            <span class="chip rust">Original Methodology</span>
+          </div>
+          <h3>Hungry Hippo And Adaptive Lattice</h3>
+          <p>Built a layered adaptive research stack with regime reading, shape libraries, controller scaffolding, and explicit gap doctrine.</p>
+          <ul>
+            <li>Regime-aware geometry and posture ideas</li>
+            <li>Transfer priors and candidate libraries</li>
+            <li>Explicit admission that the controller is not fully validated yet</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip violet">Competition</span>
+            <span class="chip sage">Operationalized</span>
+          </div>
+          <h3>Competition And Promotion Framework</h3>
+          <p>Systematically tested competing variants and promoted winners instead of managing a pile of one-off experiments.</p>
+          <ul>
+            <li>Anchor and close-style competitions</li>
+            <li>Family-local benchmarks and breakthrough dockets</li>
+            <li>Shadow-to-live graduation rules with anti-promotion firewalls</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip violet">Supervision</span>
+            <span class="chip sage">24/7 Ops</span>
+          </div>
+          <h3>Watchdogs, Registry, And Shared Price Infrastructure</h3>
+          <p>Built the operations layer needed to keep many lanes alive without silent drift, duplicate processes, or stale runtime ambiguity.</p>
+          <ul>
+            <li>Watchdog groups and runner registry</li>
+            <li>MT5 terminal guard and process singletons</li>
+            <li>Shared price feeder and runtime drift reports</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip violet">Operator Surfaces</span>
+            <span class="chip sage">High Visibility</span>
+          </div>
+          <h3>Board And Dashboard Ecosystem</h3>
+          <p>Generated thousands of board files so the lane can be operated through explicit authority surfaces instead of memory or guesswork.</p>
+          <ul>
+            <li>Health, PnL, seat, concentration, readiness, and proof boards</li>
+            <li>Per-symbol live-seat truth</li>
+            <li>Compact reports for real operator questions</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Key Discoveries And Durable Lessons</h2>
+          <p>Some of these are stronger than others. The point is to show disciplined findings, not to pretend they are all universal laws.</p>
+        </div>
+      </div>
+      <div class="finding-grid">
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip rust">House Discovery</span>
+            <span class="chip amber">Strong Internal Evidence</span>
+          </div>
+          <h3>ATR Threshold Discovery</h3>
+          <p>Crypto lattice steps below <strong>1.0x ATR</strong> repeatedly went negative EV in the warp family. That became a durable internal rule rather than another tunable preference.</p>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip rust">Internal Finding</span>
+            <span class="chip amber">Validated In Lane</span>
+          </div>
+          <h3>M5 Timeframe Dominance</h3>
+          <p>M5 repeatedly outperformed M15 and H1 on money velocity and reset behavior in the strongest mean-reversion families.</p>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip rust">Durable Lesson</span>
+            <span class="chip amber">Operational Rule</span>
+          </div>
+          <h3>Spread-To-Step Ratio Matters</h3>
+          <p>Spread friction regularly destroyed edges that looked acceptable in looser or replay-style evaluation.</p>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip blue">Research Discipline</span>
+            <span class="chip sage">Strong Signal</span>
+          </div>
+          <h3>Forward Shadow Beats Replay</h3>
+          <p>Bar-replay leaders degraded or failed when moved to honest forward conditions. The lane treats forward shadow as the real gate.</p>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip red">Unsolved</span>
+            <span class="chip amber">Important</span>
+          </div>
+          <h3>The Cover Problem</h3>
+          <p>The repo repeatedly concludes that realized flow can still fail to stay ahead of floating burden. This remains one of the biggest open problems.</p>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip red">Unsolved</span>
+            <span class="chip amber">Important</span>
+          </div>
+          <h3>Composition Is Hard</h3>
+          <p>The best sleeves and the best local doctrines do not necessarily compose into the best whole. The lane discovered that repeatedly in ratio and universal-doctrine work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Capability Timeline</h2>
+          <p>This is the story arc you were missing: not just one controller, but the evolution from basic engines into a research organism.</p>
+        </div>
+      </div>
+      <div class="card panel timeline">
+        <div class="milestone">
+          <div class="date">Early lane</div>
+          <div>
+            <strong>Built the core MT5 bot runtime</strong>
+            Supervisor, worker, exits, config loading, learning hooks, and health surfaces.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="date">Lattice phase</div>
+          <div>
+            <strong>Turned the penetration lattice into a real research family</strong>
+            Canonical engine, live and shadow runners, geometry doctrine, and step/close experiments.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="date">Competition phase</div>
+          <div>
+            <strong>Operationalized tournaments and promotion logic</strong>
+            Staged-anchor competitions, family-local benchmarks, and shadow-to-live rules.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="date">Operator phase</div>
+          <div>
+            <strong>Built supervision, registry, watchdog, and board infrastructure</strong>
+            The lane became operable as a multi-runner system rather than a code pile.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="date">Adaptive phase</div>
+          <div>
+            <strong>Started the state-aware control research program</strong>
+            Profit modes, unified objective, adaptive shape libraries, proof boards, and explicit foundational gap doctrine.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>How The Lane Works</h2>
+          <p>These diagrams now sit inside a broader achievement story instead of trying to carry the whole presentation on their own.</p>
+        </div>
+      </div>
+      <div class="systems-grid">
+        <article class="card mermaid-card">
+          <div class="chip-row">
+            <span class="chip blue">System Map</span>
+          </div>
+          <div class="mermaid-wrap">
+            <div class="mermaid">
+flowchart LR
+    subgraph Inputs
+        A[Bars and quotes]
+        B[Spread and range]
+        C[Open burst events]
+        D[First-path telemetry]
+        E[Runtime state files]
+    end
+
+    subgraph Controller
+        F[Profit mode classifier]
+        G[Adaptive lattice controller]
+        H[Unified objective]
+        I[Survival constraints]
+        J[Shape recommendation]
+    end
+
+    subgraph Runtime
+        K[Runtime overlays]
+        L[Shadow or live lane]
+        M[State and event logs]
+    end
+
+    subgraph Proof
+        N[Proof watch boards]
+        O[Incumbent vs challenger studies]
+        P[Promotion or parking decision]
+    end
+
+    A --> F
+    B --> F
+    C --> F
+    D --> G
+    E --> G
+    F --> G
+    G --> H
+    G --> I
+    H --> J
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    M --> N
+    M --> O
+    N --> P
+    O --> P
+            </div>
+          </div>
+          <p class="footer">Platform-level view: controller, runtime, and proof surfaces are separate on purpose.</p>
+        </article>
+        <article class="card mermaid-card">
+          <div class="chip-row">
+            <span class="chip blue">Proof Discipline</span>
+          </div>
+          <div class="mermaid-wrap">
+            <div class="mermaid">
+flowchart LR
+    A[Runtime events and state logs] --> B[Path-quality extraction]
+    B --> C[First-path verdict]
+    B --> D[Market-state hypothesis]
+    B --> E[Close and carry metrics]
+    C --> F[Proof watch board]
+    D --> F
+    E --> G[Unified objective validation]
+    E --> H[Joint control law study]
+    F --> I{Evidence supports promotion?}
+    G --> I
+    H --> I
+    I -->|No| J[Keep negative evidence visible]
+    I -->|No| K[Do not overclaim]
+    I -->|Yes| L[Promote challenger]
+            </div>
+          </div>
+          <p class="footer">The lane is designed to preserve disconfirming evidence instead of narrating around it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Representative Edges And Families</h2>
+          <p>These rows are there to show breadth and experimentation, not to claim every family is currently dominant.</p>
+        </div>
+      </div>
+      <div class="card panel table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Family</th>
+              <th>What Was Built</th>
+              <th>Representative Result Or Lesson</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Warp</td>
+              <td>High-throughput lattice family optimized for closes/hour</td>
+              <td>BTC and selected crypto lanes became major modeled candidates; ATR floor emerged as a durable rule</td>
+              <td>Shows the lane can discover and refine a family instead of just tuning one row</td>
+            </tr>
+            <tr>
+              <td>Hungry Hippo</td>
+              <td>Regime-aware adaptive lattice framework with per-symbol configs and audits</td>
+              <td>Some symbols improved strongly, others showed zero improvement, which sharpened the adaptive doctrine</td>
+              <td>Shows serious adaptive research instead of vague “AI” language</td>
+            </tr>
+            <tr>
+              <td>Ratio Lattice</td>
+              <td>Coinbase spot ratio-trading sleeve research with walk-forward checks</td>
+              <td>Good sleeves did not compose cleanly; denominator contention became a real finding</td>
+              <td>Shows the repo learns from composition failure, not just single-lane wins</td>
+            </tr>
+            <tr>
+              <td>Snake / Micro-Harvest</td>
+              <td>Extreme-frequency M1 family with bootstrap and margin realism</td>
+              <td>Raw ceiling looked attractive, but bootstrap and margin reality killed most honest rows</td>
+              <td>Shows the lane knows how to reject seductive but false edges</td>
+            </tr>
+            <tr>
+              <td>Kelly / Allocation</td>
+              <td>Portfolio sizing across modeled spot candidates</td>
+              <td>Allocation became part of the organism, not an afterthought</td>
+              <td>Shows portfolio-level systems thinking beyond strategy discovery</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Infrastructure Around The Research</h2>
+          <p>The repo is stronger because the research lane is surrounded by operational infrastructure.</p>
+        </div>
+      </div>
+      <div class="systems-grid">
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip violet">Operations</span>
+          </div>
+          <h3>Supervision And Runtime Safety</h3>
+          <ul>
+            <li>Watchdog groups and runner registries</li>
+            <li>MT5 terminal guard and duplicate-launch suppression</li>
+            <li>Shared price feeder and runtime drift reporting</li>
+            <li>Closure firewall and affordability gate logic</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip violet">Memory</span>
+          </div>
+          <h3>Durable Truth Surfaces</h3>
+          <ul>
+            <li>Current assumptions, modeled candidates, active risks, and lane state</li>
+            <li>Session logs and review notes kept outside the public snapshot when they contain local state</li>
+            <li>A real separation between public proof surfaces and private operational context</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip violet">Coordination</span>
+          </div>
+          <h3>Multi-Agent Research Support</h3>
+          <ul>
+            <li>Switchboard communication layer</li>
+            <li>Agent coordination surfaces and discovery logs</li>
+            <li>Parallel research and monitoring support</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip violet">Presentation</span>
+          </div>
+          <h3>Board-First Operator UX</h3>
+          <ul>
+            <li>Thousands of generated reports and status boards</li>
+            <li>Authority-stack thinking for answering runtime questions quickly</li>
+            <li>Readable planning and readiness surfaces for each seam</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Why This Is Actually Impressive</h2>
+          <p>The impressive part is not just the code count. It is the combination of research ambition and operational honesty.</p>
+        </div>
+      </div>
+      <div class="boundary-grid">
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip sage">Strong Signal</span>
+          </div>
+          <h3>What Makes The Lane Strong</h3>
+          <ul>
+            <li>Real doctrine instead of prompt-level slogans</li>
+            <li>Negative evidence is kept visible</li>
+            <li>Promotion is gated through shadow, benchmarks, and guardrails</li>
+            <li>There is extensive operational infrastructure around the research</li>
+            <li>The lane repeatedly turns unclear behavior into explicit rules and boards</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <div class="chip-row">
+            <span class="chip red">Boundary</span>
+          </div>
+          <h3>What Not To Claim</h3>
+          <ul>
+            <li>Do not present it as a finished money-printing machine</li>
+            <li>Do not claim the adaptive lane is already proven superior</li>
+            <li>Do not market every internal finding as field-novel research</li>
+            <li>Do present it as a serious research and control platform under uncertainty</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer">
+      Best use: show this page to establish scope, then zoom into the state-aware lattice case study and the controller/proof diagrams for the deep technical story.
+    </p>
+  </main>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      flowchart: {
+        curve: "basis",
+        htmlLabels: true,
+        nodeSpacing: 34,
+        rankSpacing: 50
+      },
+      themeVariables: {
+        background: "#ffffff",
+        primaryColor: "#edf3fb",
+        primaryTextColor: "#13161c",
+        primaryBorderColor: "#2a5ea8",
+        secondaryColor: "#fbf0e8",
+        tertiaryColor: "#eef5ef",
+        lineColor: "#5f6874",
+        clusterBkg: "#fffdf8",
+        clusterBorder: "#d9dfe7",
+        fontFamily: "Aptos, Segoe UI, Trebuchet MS, sans-serif",
+        fontSize: "16px"
+      }
+    });
+  </script>
+</body>
+</html>

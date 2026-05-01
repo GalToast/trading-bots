@@ -1,0 +1,58 @@
+{
+  "name": "shadow_gbpusd_m15_hungry_hippo_v1",
+  "kind": "shadow_fx",
+  "state_path": "reports/penetration_lattice_shadow_gbpusd_m15_hungry_hippo_v1_state.json",
+  "event_path": "reports/penetration_lattice_shadow_gbpusd_m15_hungry_hippo_v1_events.jsonl",
+  "poll_seconds": 30,
+  "stale_after_seconds": 240,
+  "process_match_substrings": [
+    "scripts/live_penetration_lattice_tick_shadow.py",
+    "shadow_gbpusd_m15_hungry_hippo_v1_state.json"
+  ],
+  "restart_args": [
+    "scripts/live_penetration_lattice_tick_shadow.py",
+    "--symbol", "GBPUSD",
+    "--timeframe", "M15",
+    "--step", "0.00041",
+    "--step-sell", "0.00030",
+    "--step-buy", "0.00058",
+    "--max-open-per-side", "12",
+    "--raw-close-alpha", "0.3",
+    "--raw-rearm-variant", "rearm_lvl2_exc1",
+    "--raw-rearm-cooldown-bars", "3",
+    "--raw-sell-gap", "1",
+    "--raw-buy-gap", "1",
+    "--poll-seconds", "30",
+    "--max-floating-loss-usd", "-15.0",
+    "--escape-hatch",
+    "--escape-max-bars", "12",
+    "--escape-max-loss", "3.0",
+    "--escape-cut-count", "1",
+    "--escape-max-cut-loss", "15.0",
+    "--max-lattice-window-bars", "240",
+    "--state-path", "reports/penetration_lattice_shadow_gbpusd_m15_hungry_hippo_v1_state.json",
+    "--event-path", "reports/penetration_lattice_shadow_gbpusd_m15_hungry_hippo_v1_events.jsonl"
+  ],
+  "enabled": false,
+  "watchdog_group": "fx_watchdog",
+  "hungry_hippo_metadata": {
+    "personality": "BREAKOUT",
+    "tuning_source": "hungry_hippo_gbpusd_tuning.py (300-combination sweep)",
+    "tuning_net_7d": "+$35.29",
+    "tuning_closes": 120,
+    "tuning_avg_per_close": "+$0.294",
+    "baseline_net_7d": "-$6.07",
+    "improvement": "+$41.36 vs baseline",
+    "regime_alignment": "trend_follow → BREAKOUT personality",
+    "rearm_audit_status": "clean — auto-rearm eligible",
+    "validation_status": "validated by tuning + regime alignment + rearm audit",
+    "deploy_priority": 1,
+    "risk_notes": "SELL-tight geometry validated for GBPUSD ALL_BULLISH regime. Tight sells (0.7× ATR) catch pullbacks, wide buys (1.4× ATR) give uptrend room. Alpha=0.3 for early close compounding.",
+    "guardrails": {
+      "kill_on_reset_storm": true,
+      "max_resets_per_hour": 5,
+      "floating_loss_limit_usd": -15.0,
+      "session_gate": null
+    }
+  }
+}

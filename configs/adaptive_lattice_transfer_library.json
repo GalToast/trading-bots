@@ -1,0 +1,73 @@
+{
+  "version": "2026-04-14-adaptive-transfer-v1",
+  "scope": "Cross-symbol transfer guidance for the strongest current FX donor geometry.",
+  "donor": {
+    "symbol": "GBPUSD",
+    "shape_id": "gbpusd_trend_harvest_v1",
+    "read": "Current FX donor shape: ATR sell=0.5 buy=1.0, all_profitable alpha=0.5, sell_gap=1, buy_gap=3.",
+    "evidence_paths": [
+      "reports/fx_fixed_policy_asymmetric_geometry.md",
+      "reports/fx_fixed_shape_side_gap.md",
+      "reports/gbpusd_tick_forward_shadow.md"
+    ]
+  },
+  "targets": [
+    {
+      "symbol": "GBPUSD",
+      "verdict": "donor_reference",
+      "recommended_shape_id": "gbpusd_trend_harvest_v1",
+      "rationale": "The donor remains the only current FX shape with both asymmetric offline lift and active forward-proof posture.",
+      "constraints": [],
+      "evidence_paths": [
+        "reports/fx_fixed_policy_asymmetric_geometry.md",
+        "reports/fx_fixed_shape_side_gap.md",
+        "reports/gbpusd_tick_forward_shadow.md"
+      ]
+    },
+    {
+      "symbol": "NZDUSD",
+      "verdict": "adapt_first",
+      "recommended_shape_id": "nzdusd_asym_probe_v1",
+      "rationale": "Directional asymmetry transfers, but only as a weaker raw-family probe. Keep gaps conservative until realism and forward retention improve.",
+      "constraints": [
+        "Do not import GBPUSD side-gap asymmetry by default.",
+        "Require realism or forward-proof promotion before any live claim."
+      ],
+      "evidence_paths": [
+        "reports/fx_fixed_policy_asymmetric_geometry.md",
+        "docs/working-guide.md",
+        "configs/adaptive_lattice_shape_library.json"
+      ]
+    },
+    {
+      "symbol": "EURUSD",
+      "verdict": "reject_for_now",
+      "recommended_shape_id": "eurusd_mixed_floor_v1",
+      "rationale": "GBPUSD-style asymmetry does not survive the EURUSD realism gates. Keep EURUSD on the symmetric mixed-floor branch instead of forcing donor geometry across.",
+      "constraints": [
+        "Prefer symmetric 1.0/1.0-style spacing and the conservative outer close branch.",
+        "No transfer promotion until forward proof beats the legacy realistic branch."
+      ],
+      "evidence_paths": [
+        "reports/fx_fixed_policy_asymmetric_geometry.md",
+        "reports/eurusd_salvage_realism.md",
+        "configs/adaptive_lattice_shape_library.json"
+      ]
+    },
+    {
+      "symbol": "USDJPY",
+      "verdict": "blocked",
+      "recommended_shape_id": "usdjpy_bounded_survival_v1",
+      "rationale": "Cross-symbol transfer is blocked by a live bounded-family runtime fault, so geometry decisions are secondary until the path is repaired.",
+      "constraints": [
+        "Do not launch bounded adaptive experiments until close_style runtime fault is repaired.",
+        "Do not infer transfer failure from runtime instability."
+      ],
+      "evidence_paths": [
+        "reports/watchdog/shadow_usdjpy_gap2.err.log",
+        "reports/watchdog/shadow_usdjpy_shallow03.err.log",
+        "reports/adaptive_lattice_proof_board.json"
+      ]
+    }
+  ]
+}

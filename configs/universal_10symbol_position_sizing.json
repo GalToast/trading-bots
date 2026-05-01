@@ -1,0 +1,91 @@
+{
+  "position_sizing": {
+    "BTCUSD": {
+      "edge_pct": 59.09,
+      "allocated_capital": 40773.64,
+      "max_lot_size": 0.0014,
+      "recommended_lot": 0.001,
+      "max_positions": 30,
+      "risk_per_position": 690.0
+    },
+    "ETHUSD": {
+      "edge_pct": 13.31,
+      "allocated_capital": 9181.2,
+      "max_lot_size": 0.0069,
+      "recommended_lot": 0.0048,
+      "max_positions": 30,
+      "risk_per_position": 690.0
+    },
+    "GBPUSD": {
+      "edge_pct": 10.64,
+      "allocated_capital": 7341.52,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 20,
+      "risk_per_position": 690.0
+    },
+    "XRPUSD": {
+      "edge_pct": 5.52,
+      "allocated_capital": 3810.56,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 30,
+      "risk_per_position": 690.0
+    },
+    "EURUSD": {
+      "edge_pct": 5.34,
+      "allocated_capital": 3687.35,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 20,
+      "risk_per_position": 690.0
+    },
+    "SOLUSD": {
+      "edge_pct": 4.05,
+      "allocated_capital": 2796.66,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 30,
+      "risk_per_position": 690.0
+    },
+    "NZDUSD": {
+      "edge_pct": 1.65,
+      "allocated_capital": 1139.77,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 20,
+      "risk_per_position": 690.0
+    },
+    "DOGEUSD": {
+      "edge_pct": 0.32,
+      "allocated_capital": 221.89,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 30,
+      "risk_per_position": 690.0
+    },
+    "ADAUSD": {
+      "edge_pct": 0.05,
+      "allocated_capital": 32.61,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 30,
+      "risk_per_position": 690.0
+    },
+    "DOTUSD": {
+      "edge_pct": 0.02,
+      "allocated_capital": 14.81,
+      "max_lot_size": 0.69,
+      "recommended_lot": 0.483,
+      "max_positions": 30,
+      "risk_per_position": 690.0
+    }
+  },
+  "portfolio_summary": {
+    "total_account_balance": 69000.0,
+    "max_risk_per_trade_pct": 0.01,
+    "confidence_multiplier": 0.7,
+    "total_verified_edge_90d": 140782.56,
+    "daily_avg_edge": 1564.25
+  }
+}

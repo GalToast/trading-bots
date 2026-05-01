@@ -1,0 +1,463 @@
+{
+  "version": "2026-04-14-adaptive-lattice-v1",
+  "objective": "Select among pre-validated lattice shapes using regime, friction, churn, portfolio pressure, and realized-profit conversion pressure instead of mutating one static lattice blindly.",
+  "controller_defaults": {
+    "fallback_regime": "mixed",
+    "switch_score_margin": 2.0,
+    "block_bounded_family_when_runtime_fault_active": true
+  },
+  "blockers": [
+    {
+      "blocker_id": "bounded_close_style_runtime_fault",
+      "status": "active",
+      "applies_to_families": [
+        "bounded"
+      ],
+      "affected_symbols": [
+        "USDJPY"
+      ],
+      "read": "Bounded-family runtime currently shows repeated close_style NameError traces on USDJPY shadow restarts; do not trust bounded adaptive experiments until repaired.",
+      "evidence_paths": [
+        "reports/watchdog/shadow_usdjpy_gap2.err.log",
+        "reports/watchdog/shadow_usdjpy_shallow03.err.log",
+        "reports/watchdog/shadow_watchdog_report.json"
+      ]
+    }
+  ],
+  "symbols": {
+    "GBPUSD": {
+      "stage": "shadow_ready",
+      "preferred_family": "raw",
+      "candidate_shapes": [
+        {
+          "shape_id": "gbpusd_trend_harvest_v1",
+          "family": "raw",
+          "regime_targets": [
+            "trending",
+            "mixed"
+          ],
+          "risk_profile": "balanced",
+          "portfolio_profile": "medium",
+          "monetization_profile": "trend_harvest",
+          "step_method": {
+            "kind": "atr_multiple_asymmetric",
+            "sell_coeff": 0.5,
+            "buy_coeff": 1.0,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 0.5,
+            "sell_gap": 1,
+            "buy_gap": 3
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "survivor",
+            "note": "Best current FX survivor in fixed-policy asymmetry + side-gap ladders; strongest candidate for adaptive trend harvest.",
+            "source_reports": [
+              "docs/penetration-lattice-program.md",
+              "scripts/benchmark_fx_fixed_policy_asymmetric_geometry.py"
+            ],
+            "performance": {
+              "realized_close_usd": 0.23,
+              "close_count": 9,
+              "lane": "shadow_gbpusd_m15_trend_harvest_v1",
+              "note": "First-path accumulating. 9 closes at +$0.23 each, all from single burst event. Spread cost ~30% of gross. Early but positive.",
+              "as_of": "2026-04-16T18:14:00+00:00"
+            }
+          }
+        },
+        {
+          "shape_id": "gbpusd_range_floor_v1",
+          "family": "raw",
+          "regime_targets": [
+            "ranging"
+          ],
+          "risk_profile": "conservative",
+          "portfolio_profile": "light",
+          "monetization_profile": "friction_survivor",
+          "step_method": {
+            "kind": "atr_multiple_asymmetric",
+            "sell_coeff": 1.0,
+            "buy_coeff": 1.0,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 0.5,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "fallback",
+            "note": "Conservative symmetric fallback when friction/churn rises or trend edge degrades.",
+            "source_reports": [
+              "docs/penetration-lattice-program.md"
+            ]
+          }
+        },
+        {
+          "shape_id": "gbpusd_micro_harvest_v1",
+          "family": "raw",
+          "regime_targets": [
+            "mixed",
+            "ranging"
+          ],
+          "risk_profile": "conservative",
+          "portfolio_profile": "light",
+          "monetization_profile": "micro_harvest",
+          "step_method": {
+            "kind": "atr_multiple_asymmetric",
+            "sell_coeff": 0.8,
+            "buy_coeff": 0.8,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 0.3,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "shadow_ready",
+            "note": "When GBP tape goes quiet (low ATR, low directional bias) but spread remains manageable, harvest micro fluctuations with tight steps and fast close conversion. Step 0.8× ATR is below the crypto 1.5× threshold because FX mean-reverts within bars. Requires same_bar_round_trip_rate >= 0.2 to be viable.",
+            "source_reports": [
+              "memory/canonical-truths.md",
+              "reports/shape_library_profit_mode_audit.json"
+            ]
+          }
+        }
+      ]
+    },
+    "EURUSD": {
+      "stage": "research_only",
+      "preferred_family": "raw",
+      "candidate_shapes": [
+        {
+          "shape_id": "eurusd_mixed_floor_v1",
+          "family": "raw",
+          "regime_targets": [
+            "mixed",
+            "ranging"
+          ],
+          "risk_profile": "conservative",
+          "portfolio_profile": "light",
+          "monetization_profile": "friction_survivor",
+          "step_method": {
+            "kind": "atr_multiple_asymmetric",
+            "sell_coeff": 1.0,
+            "buy_coeff": 1.0,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "outer",
+            "alpha": 0.5,
+            "sell_gap": 2,
+            "buy_gap": 2
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "research_only",
+            "note": "Current fixed-policy floor remains interesting offline, but no forward-proof promotion case is open yet.",
+            "source_reports": [
+              "docs/penetration-lattice-program.md",
+              "docs/fx_close_alpha_promotion_proposal.md"
+            ]
+          }
+        }
+      ]
+    },
+    "NZDUSD": {
+      "stage": "research_only",
+      "preferred_family": "raw",
+      "candidate_shapes": [
+        {
+          "shape_id": "nzdusd_asym_probe_v1",
+          "family": "raw",
+          "regime_targets": [
+            "trending",
+            "mixed"
+          ],
+          "risk_profile": "balanced",
+          "portfolio_profile": "medium",
+          "monetization_profile": "trend_harvest",
+          "step_method": {
+            "kind": "atr_multiple_asymmetric",
+            "sell_coeff": 0.25,
+            "buy_coeff": 0.5,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 0.5,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "research_only",
+            "note": "Asymmetric lift exists offline, but realism retention is weak enough that this stays shadow/research only.",
+            "source_reports": [
+              "docs/penetration-lattice-program.md",
+              "scripts/benchmark_fx_fixed_policy_asymmetric_geometry.py"
+            ]
+          }
+        }
+      ]
+    },
+    "BTCUSD": {
+      "stage": "shadow_ready",
+      "preferred_family": "raw",
+      "candidate_shapes": [
+        {
+          "shape_id": "btcusd_regime_rangeatr_v1",
+          "family": "raw",
+          "regime_targets": [
+            "trending",
+            "mixed",
+            "ranging"
+          ],
+          "risk_profile": "balanced",
+          "portfolio_profile": "heavy",
+          "monetization_profile": "trend_extension",
+          "step_method": {
+            "kind": "range_atr_formula",
+            "formula": "step = avg_range * clamp(1.6 - 0.6 * range_atr_ratio, 0.5, 1.2)",
+            "basis": "range_atr_ratio"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 1.0,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "shadow_ready",
+            "note": "BTC has existing ATR-normalized and regime-adaptive step work; use it as the first adaptive raw-family crypto scaffold.",
+            "source_reports": [
+              "scripts/regime_adaptive_lattice.py",
+              "scripts/atr_normalized_step_optimizer.py"
+            ]
+          }
+        },
+        {
+          "shape_id": "btcusd_rangeatr_cash_harvest_v1",
+          "family": "raw",
+          "regime_targets": [
+            "trending",
+            "mixed",
+            "ranging"
+          ],
+          "risk_profile": "conservative",
+          "portfolio_profile": "medium",
+          "monetization_profile": "cash_harvest",
+          "step_method": {
+            "kind": "range_atr_formula",
+            "formula": "step = avg_range * clamp(1.6 - 0.6 * range_atr_ratio, 0.5, 1.2)",
+            "basis": "range_atr_ratio"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 0.5,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "shadow_ready",
+            "note": "When BTC adaptive telemetry shows zero fresh closes and negative carry, switch the same range/ATR geometry into a partial cash-harvest profile instead of waiting for full-extension monetization.",
+            "source_reports": [
+              "reports/btc_adaptive_runtime_audit.json",
+              "reports/adaptive_lattice_perfection_scorecard_board.md"
+            ]
+          }
+        },
+        {
+          "shape_id": "btcusd_anticipatory_rearm_v1",
+          "family": "raw",
+          "regime_targets": [
+            "breakout_expansion",
+            "squeeze"
+          ],
+          "risk_profile": "balanced",
+          "portfolio_profile": "heavy",
+          "monetization_profile": "breakout_extension",
+          "step_method": {
+            "kind": "atr_multiple",
+            "coeff": 1.0,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 1.0,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": true
+          },
+          "evidence": {
+            "status": "shadow_ready",
+            "note": "Anticipatory above-price rearm is the current repo-backed trend-squeeze alpha idea for BTC.",
+            "source_reports": [
+              "docs/anticipatory_dynamic_rearm_spec.md"
+            ]
+          }
+        }
+      ]
+    },
+    "ETHUSD": {
+      "stage": "probation",
+      "preferred_family": "raw",
+      "candidate_shapes": [
+        {
+          "shape_id": "ethusd_regime_rangeatr_v1",
+          "family": "raw",
+          "regime_targets": [
+            "trending",
+            "mixed",
+            "ranging"
+          ],
+          "risk_profile": "balanced",
+          "portfolio_profile": "medium",
+          "monetization_profile": "trend_extension",
+          "step_method": {
+            "kind": "range_atr_formula",
+            "formula": "step = avg_range * clamp(1.6 - 0.6 * range_atr_ratio, 0.5, 1.2)",
+            "basis": "range_atr_ratio"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 1.0,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "probation",
+            "note": "ETH adaptive step should stay probationary until the current live lane clears a larger fresh close sample.",
+            "source_reports": [
+              "docs/adaptive_lattice_research_spec.md",
+              "scripts/regime_adaptive_lattice.py"
+            ]
+          }
+        },
+        {
+          "shape_id": "ethusd_floor_harvest_v1",
+          "family": "raw",
+          "regime_targets": [
+            "mixed",
+            "ranging"
+          ],
+          "risk_profile": "conservative",
+          "portfolio_profile": "medium",
+          "monetization_profile": "cash_harvest",
+          "step_method": {
+            "kind": "atr_multiple_asymmetric",
+            "sell_coeff": 1.55,
+            "buy_coeff": 1.55,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "all_profitable",
+            "alpha": 0.5,
+            "sell_gap": 1,
+            "buy_gap": 1
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc1",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "shadow_ready",
+            "note": "When ETH tape shifts from trending to quiet/mixed with manageable spread, switch from trend_extension to fast-close cash harvest. Step coefficient 1.55× ATR matches the proven ETH M5 optimum.",
+            "source_reports": [
+              "memory/canonical-truths.md",
+              "reports/shape_library_profit_mode_audit.json"
+            ]
+          }
+        }
+      ]
+    },
+    "USDJPY": {
+      "stage": "blocked_runtime",
+      "preferred_family": "bounded",
+      "candidate_shapes": [
+        {
+          "shape_id": "usdjpy_bounded_survival_v1",
+          "family": "bounded",
+          "regime_targets": [
+            "mixed",
+            "ranging"
+          ],
+          "risk_profile": "conservative",
+          "portfolio_profile": "light",
+          "monetization_profile": "friction_survivor",
+          "step_method": {
+            "kind": "atr_multiple",
+            "coeff": 1.0,
+            "basis": "atr"
+          },
+          "close": {
+            "style": "all_profitable",
+            "bounded_close_gap": 2,
+            "same_bar_min_pnl": 0.0,
+            "same_bar_shallow_level_cap": 3
+          },
+          "rearm": {
+            "variant": "rearm_lvl2_exc2",
+            "cooldown_bars": 0,
+            "anticipatory": false
+          },
+          "evidence": {
+            "status": "blocked_runtime",
+            "note": "Do not trust bounded-path adaptive conclusions for USDJPY until the close_style runtime defect is repaired.",
+            "source_reports": [
+              "memory/2026-04-14.md",
+              "docs/adaptive_lattice_research_spec.md"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

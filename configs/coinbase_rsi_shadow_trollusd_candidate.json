@@ -1,0 +1,26 @@
+{
+  "lane_name": "shadow_coinbase_trollusd_rsi7",
+  "product_id": "TROLL-USD",
+  "state_path": "reports/coinbase_rsi_shadow_trollusd_state.json",
+  "event_path": "reports/coinbase_rsi_shadow_trollusd_events.jsonl",
+  "rsi_period": 7,
+  "oversold": 30,
+  "overbought": 70,
+  "profit_target_pct": 0.02,
+  "stop_loss_pct": 0.003,
+  "max_hold_bars": 48,
+  "maker_fee_bps": 120,
+  "fee_model": "coinbase_spot_account_taker_intro1_120bps_per_side",
+  "deploy_pct": 0.9,
+  "starting_cash": 48,
+  "granularity": "FIVE_MINUTE",
+  "_candidate_rationale": {
+    "pulse_score": 44.88,
+    "pulse_state": "hot_momentum",
+    "spread_bps": 4.47,
+    "candles_available": 32,
+    "live_route": "ready_direct_usd_or_stable",
+    "source": "coinbase_spot_pulse_shadow_cross_reference.md (2026-04-23)",
+    "notes": "2nd-highest pulse score, tightest spread (4bps). Only 32 candles — limited for backtest validation but strong live candidate. Config mirrors RAVE-USD RSI7 defaults."
+  }
+}

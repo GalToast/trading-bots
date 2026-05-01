@@ -1,0 +1,23 @@
+{
+  "poll_seconds": 30,
+  "fee_model": "coinbase_spot_account_taker_intro1_120bps_per_side",
+  "lanes": [
+    {
+      "lane_name": "shadow_coinbase_mogusd_rsi4_profit_only",
+      "product_id": "MOG-USD",
+      "state_path": "reports/coinbase_rsi_shadow_mogusd_state.json",
+      "event_path": "reports/coinbase_rsi_shadow_mogusd_events.jsonl",
+      "rsi_period": 4,
+      "oversold": 30,
+      "overbought": 101,
+      "profit_target_pct": 7.5,
+      "stop_loss_pct": 0.5,
+      "max_hold_bars": 24,
+      "maker_fee_bps": 120,
+      "fee_model": "coinbase_spot_account_taker_intro1_120bps_per_side",
+      "deploy_pct": 0.95,
+      "starting_cash": 48,
+      "granularity": "FIVE_MINUTE"
+    }
+  ]
+}

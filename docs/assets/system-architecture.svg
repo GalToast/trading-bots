@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Trading Bots Public Architecture</title>
+  <desc id="desc">Architecture diagram showing hypothesis design, research runners, validation gates, supervised shadow execution, evidence surfaces, and public review outputs.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .panel { fill: #ffffff; stroke: #d8dee8; stroke-width: 2; }
+      .band { fill: #f1e6d6; stroke: #dbc6aa; stroke-width: 2; }
+      .blue { fill: #eaf1fb; stroke: #9eb8d9; }
+      .green { fill: #edf6ef; stroke: #9dbfa6; }
+      .amber { fill: #fbf1da; stroke: #d7b66a; }
+      .rust { fill: #f8eadf; stroke: #cf9a78; }
+      .ink { fill: #161a22; font-family: Georgia, serif; font-weight: 700; }
+      .label { fill: #243044; font-family: Segoe UI, Arial, sans-serif; font-weight: 700; font-size: 24px; }
+      .body { fill: #5b6575; font-family: Segoe UI, Arial, sans-serif; font-size: 17px; }
+      .small { fill: #5b6575; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .arrow { stroke: #65758a; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .lane { stroke: #d8dee8; stroke-width: 2; stroke-dasharray: 8 8; }
+    </style>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#65758a" />
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1280" height="760" rx="0" />
+  <rect class="band" x="50" y="44" width="1180" height="94" rx="28" />
+  <text class="ink" x="86" y="99" font-size="38">Trading Bots Public Architecture</text>
+  <text class="body" x="710" y="86">Recruiter view: hypothesis discipline, runtime controls,</text>
+  <text class="body" x="710" y="112">focused tests, and evidence without private runtime state.</text>
+
+  <line class="lane" x1="640" y1="160" x2="640" y2="690" />
+  <text class="small" x="90" y="174">Research and design loop</text>
+  <text class="small" x="765" y="174">Reviewable public proof surfaces</text>
+
+  <rect class="panel blue" x="78" y="205" width="260" height="132" rx="22" />
+  <text class="label" x="106" y="251">1. Hypothesis</text>
+  <text class="body" x="106" y="286">Strategy ideas become</text>
+  <text class="body" x="106" y="310">testable assumptions,</text>
+  <text class="body" x="106" y="334">not deployment claims.</text>
+
+  <rect class="panel green" x="392" y="205" width="260" height="132" rx="22" />
+  <text class="label" x="420" y="251">2. Research</text>
+  <text class="body" x="420" y="286">Backtests, shadow runs,</text>
+  <text class="body" x="420" y="310">diagnostics, and</text>
+  <text class="body" x="420" y="334">failure records.</text>
+
+  <rect class="panel amber" x="706" y="205" width="260" height="132" rx="22" />
+  <text class="label" x="734" y="251">3. Gates</text>
+  <text class="body" x="734" y="286">Explicit fee, spread,</text>
+  <text class="body" x="734" y="310">notional, cooldown, and</text>
+  <text class="body" x="734" y="334">exit behavior checks.</text>
+
+  <rect class="panel rust" x="970" y="205" width="232" height="132" rx="22" />
+  <text class="label" x="998" y="251">4. Evidence</text>
+  <text class="body" x="998" y="286">CI, proof boards,</text>
+  <text class="body" x="998" y="310">docs, and review</text>
+  <text class="body" x="998" y="334">paths for visitors.</text>
+
+  <path class="arrow" d="M338 271 H384" />
+  <path class="arrow" d="M652 271 H698" />
+  <path class="arrow" d="M966 271 H958" />
+  <path class="arrow" d="M652 313 C700 385 850 388 1018 344" />
+
+  <rect class="panel" x="92" y="412" width="304" height="170" rx="24" />
+  <text class="label" x="124" y="458">Runtime Core</text>
+  <text class="body" x="124" y="494">Supervisor, worker,</text>
+  <text class="body" x="124" y="518">exit manager, monitor,</text>
+  <text class="body" x="124" y="542">and learning surfaces.</text>
+
+  <rect class="panel" x="488" y="412" width="304" height="170" rx="24" />
+  <text class="label" x="520" y="458">Focused Test Lane</text>
+  <text class="body" x="520" y="494">Kraken maker shadow</text>
+  <text class="body" x="520" y="518">runner covered by</text>
+  <text class="body" x="520" y="542">green GitHub Actions.</text>
+
+  <rect class="panel" x="884" y="412" width="304" height="170" rx="24" />
+  <text class="label" x="916" y="458">Public Boundary</text>
+  <text class="body" x="916" y="494">Credentials, generated</text>
+  <text class="body" x="916" y="518">runtime state, and logs</text>
+  <text class="body" x="916" y="542">stay out of GitHub.</text>
+
+  <path class="arrow" d="M396 497 H480" />
+  <path class="arrow" d="M792 497 H876" />
+
+  <rect class="band" x="78" y="634" width="1124" height="70" rx="22" />
+  <text class="label" x="106" y="677">Reviewer path:</text>
+  <text class="body" x="286" y="677">README -> experiment protocol -> edge registry -> focused test -> runner implementation</text>
+</svg>

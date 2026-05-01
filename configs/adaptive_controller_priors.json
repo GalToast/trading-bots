@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-04-16T20:35:26.142928+00:00",
+  "sources": [
+    "reports\\config_to_performance_mapping.json",
+    "reports\\hungry_hippo_real_world_analysis.json",
+    "reports\\m5_warp_salvage_board.json",
+    "reports\\hungry_hippo_rearm_params.json",
+    "reports\\hungry_hippo_promotion_queue.json",
+    "reports\\regime_signal.json"
+  ],
+  "leadership_read": [
+    "One adaptive controller should replace most manual tuning labor, but it still needs symbol and family priors from production truth.",
+    "FX alpha=0.5, no-session-gate M5 salvage, and family-scoped asymmetry are the strongest current priors to feed into the controller stack.",
+    "The correct graduation path is theory to shadow to live, with symbol guardrails deciding what can graduate when."
+  ],
+  "global_policy": {
+    "session_gate_policy": "weighting_or_circuit_breaker_only",
+    "graduation_funnel": {
+      "theory_to_shadow": "requires coherent mechanism plus either offline edge or existing adjacent-family production evidence",
+      "shadow_to_live": "requires forward-positive evidence, acceptable reset behavior, and no active contradiction with controller priors or guardrail blockers",
+      "live_to_scale": "requires sustained forward-positive evidence plus clean survival under real execution"
+    },
+    "offensive_extreme_closure": {
+      "status": "research_candidate",
+      "read": "Treat extreme-order closure as an offensive floating-loss dampener when inner-lattice profits can absorb the closure cheaply."
+    },
+    "dual_lattice_hedge": {
+      "status": "research_candidate",
+      "read": "Promising but not validated; keep in shadow theory stage until a clean same-symbol dual-lattice floating offset study exists."
+    }
+  },
+  "symbol_priors": {
+    "GBPUSD": {
+      "controller_role": "fx_alpha_half_survivor",
+      "shape_envelope": "trend_harvest_raw_family",
+      "close_alpha_prior": 0.5,
+      "session_gate_bias": "not_primary",
+      "guardrail_status": "blocked",
+      "auto_rearm_allowed": false,
+      "evidence": {
+        "gbp_rearm_avg_per_close": 3.9595,
+        "best_real_world_per_close": 1.8431
+      },
+      "controller_read": "Use alpha=0.5 as the canonical FX baseline. Do not let exploratory shapeshifter work override this prior without stronger forward proof."
+    },
+    "EURUSD": {
+      "controller_role": "fx_alpha_half_survivor",
+      "shape_envelope": "mixed_floor_raw_family",
+      "close_alpha_prior": 0.5,
+      "session_gate_bias": "not_primary",
+      "guardrail_status": "blocked",
+      "auto_rearm_allowed": false,
+      "evidence": {
+        "eur_rearm_avg_per_close": 3.1724,
+        "best_real_world_per_close": 3.0903
+      },
+      "controller_read": "EURUSD belongs in the same FX alpha=0.5 prior family, but remains blocked for aggressive rearm under current guardrails."
+    },
+    "BTCUSD": {
+      "controller_role": "crypto_split_baseline",
+      "live_baseline": {
+        "lane": "live_btcusd_m15_warp",
+        "avg_per_close": 4.5896,
+        "realized_net_usd": 1266.74
+      },
+      "m5_salvage": {
+        "shadow_probe_step": 200.0,
+        "shadow_probe_avg_per_close": 69.98,
+        "shadow_probe_realized_closes": 2,
+        "failed_live_avg_per_close": -36.9063
+      },
+      "guardrail_status": "blocked",
+      "promotion_action": "hold_until_buy_realign",
+      "regime_action_bias": "",
+      "controller_read": "Preserve BTC M15 as live baseline. Keep BTC M5 in shadow-only salvage mode until the step200 probe materially outgrows the 2-close sample and BTC hold gates lift."
+    },
+    "ETHUSD": {
+      "controller_role": "crypto_m5_rebuild_candidate",
+      "m5_shadow_baseline": {
+        "step": 5.0,
+        "avg_per_close": 7.8585,
+        "realized_net_usd": 157.17,
+        "realized_closes": 20
+      },
+      "failed_live_reference": {
+        "avg_per_close": -9.2117,
+        "realized_net_usd": -110.54,
+        "realized_closes": 12
+      },
+      "guardrail_status": "blocked",
+      "promotion_action": "unblock_guardrails_first",
+      "controller_read": "Use the ETH M5 step5 shadow rebuild as the canonical M5 prior. The earlier live ETH M5 promotion thesis is superseded by actual negative live realization."
+    },
+    "NAS100": {
+      "controller_role": "index_asym_breakout_candidate",
+      "best_real_world_per_close": 76.6108,
+      "guardrail_status": "blocked",
+      "promotion_action": "wait_for_session_window",
+      "controller_read": "Current winning pattern is BUY-tight asymmetry in uptrend. Keep this as a high-priority shadow/live candidate, but avoid universalizing the exact geometry to all symbols."
+    },
+    "US30": {
+      "controller_role": "index_asym_candidate",
+      "best_real_world_per_close": 27.2871,
+      "guardrail_status": "aligned",
+      "promotion_action": "unblock_guardrails_first",
+      "controller_read": "US30 is an index asymmetry candidate, but still needs direct forward proof before it is treated as controller-default truth."
+    }
+  },
+  "ranked_hypotheses": [
+    {
+      "priority": 1,
+      "hypothesis": "FX alpha=0.5 should be the universal controller prior for FX harvest shapes",
+      "status": "production_backed",
+      "why": "GBPUSD and EURUSD rearm survivors materially outperform alpha=1.0 FX baselines with zero resets."
+    },
+    {
+      "priority": 2,
+      "hypothesis": "No-session-gate M5 salvage should stay shadow-first, not live-first",
+      "status": "production_backed",
+      "why": "BTC and ETH M5 live failures show the old direct-live restoration path is wrong, while salvage shadows still show edge."
+    },
+    {
+      "priority": 3,
+      "hypothesis": "Asymmetric breakout geometry is strongest on indices and should be treated as an index-family prior, not a universal one",
+      "status": "forward_validating",
+      "why": "NAS100 HH is producing forward-positive evidence, but controller priors should stay family-scoped until more symbols validate."
+    },
+    {
+      "priority": 4,
+      "hypothesis": "Offensive extreme closure can reduce carry drag without default session gating",
+      "status": "research_candidate",
+      "why": "User thesis is coherent and aligned with current escape-hatch direction, but it still needs explicit forward proof."
+    }
+  ]
+}

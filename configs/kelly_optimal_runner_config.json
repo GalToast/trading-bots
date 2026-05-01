@@ -1,0 +1,79 @@
+{
+  "config_type": "kelly_optimal",
+  "configs": [
+    {
+      "coin": "NOM-USD",
+      "strategy": "fibonacci",
+      "fib_lookback": 20,
+      "tp_pct": 0.08,
+      "sl_pct": 0.03,
+      "max_hold": 24,
+      "kelly_fraction": 0.23
+    },
+    {
+      "coin": "GHST-USD",
+      "strategy": "fibonacci",
+      "fib_lookback": 10,
+      "tp_pct": 0.08,
+      "sl_pct": 0.03,
+      "max_hold": 96,
+      "kelly_fraction": 0.14
+    },
+    {
+      "coin": "SUP-USD",
+      "strategy": "fibonacci",
+      "fib_lookback": 20,
+      "tp_pct": 0.08,
+      "sl_pct": 0.03,
+      "max_hold": 24,
+      "kelly_fraction": 0.11
+    },
+    {
+      "coin": "IOTX-USD",
+      "strategy": "momentum",
+      "lookback": 10,
+      "tp_pct": 0.15,
+      "sl_pct": 0.0,
+      "max_hold": 48,
+      "kelly_fraction": 0.28
+    },
+    {
+      "coin": "CFG-USD",
+      "strategy": "momentum",
+      "lookback": 15,
+      "tp_pct": 0.15,
+      "sl_pct": 0.0,
+      "max_hold": 48,
+      "kelly_fraction": 0.25
+    }
+  ],
+  "cash_weights": {
+    "NOM-USD": 0.22772277227722773,
+    "GHST-USD": 0.13861386138613863,
+    "SUP-USD": 0.10891089108910891,
+    "IOTX-USD": 0.27722772277227725,
+    "CFG-USD": 0.24752475247524752
+  },
+  "session_hours": {
+    "NOM-USD":  [1, 4, 5, 8, 10, 11, 19],
+    "GHST-USD": [2, 3, 4, 5, 7, 18],
+    "SUP-USD":  [0, 5, 15, 16, 18, 20, 23],
+    "IOTX-USD": [0, 1, 4, 7, 8, 10, 11, 13, 15, 17, 18, 19, 20, 22, 23],
+    "CFG-USD":  [0, 1, 4, 8, 10, 13, 20]
+  },
+  "projected_monthly": {
+    "NOM-USD": 165.528,
+    "GHST-USD": 67.848,
+    "SUP-USD": 39.071999999999996,
+    "IOTX-USD": 0,
+    "CFG-USD": 32.208
+  },
+  "total_projected_monthly": 304.656,
+  "dead_coins_removed": [
+    "RAVE-USD",
+    "TRU-USD",
+    "BAL-USD",
+    "A8-USD"
+  ],
+  "source": "fibonacci_momentum_fidelity_audit + kelly_markowitz_allocator"
+}

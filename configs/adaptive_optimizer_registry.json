@@ -1,0 +1,111 @@
+{
+  "version": "2026-04-14-adaptive-optimizer-trust-v1",
+  "objective": "Classify optimizer/search surfaces by how safely they can inform the adaptive lattice program.",
+  "trust_levels": {
+    "reconcile_first": "Backtest/search surface has explicit or likely execution-semantic drift. Do not let it drive deployment or promotion until reconciled against a harness or forward surface.",
+    "shadow_only": "Useful candidate generator for shadow experiments, but still not trustworthy enough for direct live deployment decisions.",
+    "research_reference": "Good for priors, sizing intuition, or idea ranking only. Not a direct config authority."
+  },
+  "surfaces": [
+    {
+      "surface_id": "atr_step_optimizer",
+      "script_path": "scripts/atr_step_optimizer.py",
+      "domain": "crypto lattice spacing",
+      "search_method": "heuristic ATR multiple sweep",
+      "trust_level": "shadow_only",
+      "read": "Useful for generating normalized spacing candidates, but it still proposes a universal ATR x 0.5 formula without runner-semantic reconciliation.",
+      "evidence_paths": [
+        "scripts/atr_step_optimizer.py",
+        "scripts/atr_formula_synthesis.py",
+        "reports/atr_step_optimization.json"
+      ],
+      "constraints": [
+        "Treat outputs as candidate spacing priors, not deployment truth.",
+        "Require shadow proof or stronger realism before promotion."
+      ]
+    },
+    {
+      "surface_id": "symbol_recipe_optimizer",
+      "script_path": "scripts/optimize_symbol_recipes.py",
+      "domain": "confirmed-displacement recipes",
+      "search_method": "per-symbol grid with walk-forward folds",
+      "trust_level": "shadow_only",
+      "read": "Stronger than a naive sweep because it bakes in spread and simple walk-forward checks, but it is still a bar-level simulator rather than the live harness.",
+      "evidence_paths": [
+        "scripts/optimize_symbol_recipes.py",
+        "docs/usdjpy-decision-log.md",
+        "reports/symbol_recipe_optimization.csv"
+      ],
+      "constraints": [
+        "Use for ranking symbol-specific candidates only.",
+        "Require forward validation before any live recommendation."
+      ]
+    },
+    {
+      "surface_id": "allocation_optimizer",
+      "script_path": "scripts/optimize_allocation.py",
+      "domain": "coin allocation",
+      "search_method": "greedy grid-search allocation",
+      "trust_level": "reconcile_first",
+      "read": "Naive optimizer on a simplified runner model. Useful for hypotheses, but not trustworthy as a cash-allocation authority without downstream realism correction.",
+      "evidence_paths": [
+        "scripts/optimize_allocation.py",
+        "reports/allocation_optimizer.json",
+        "scripts/fidelity_adjusted_optimizer.py"
+      ],
+      "constraints": [
+        "Do not use raw output as a portfolio deployment plan.",
+        "Pair with fidelity or harness reconciliation first."
+      ]
+    },
+    {
+      "surface_id": "fidelity_adjusted_allocation_optimizer",
+      "script_path": "scripts/fidelity_adjusted_optimizer.py",
+      "domain": "coin allocation",
+      "search_method": "post-hoc cost-adjusted allocation",
+      "trust_level": "shadow_only",
+      "read": "Safer than the naive allocation optimizer because it injects spread, slippage, and phantom-trade penalties, but it still inherits assumptions from the naive surface.",
+      "evidence_paths": [
+        "scripts/fidelity_adjusted_optimizer.py",
+        "reports/fidelity_adjusted_optimizer.json",
+        "reports/latest_switchboard_output.txt"
+      ],
+      "constraints": [
+        "Use as a realism filter on allocation ideas, not final truth.",
+        "Still requires harness or forward confirmation."
+      ]
+    },
+    {
+      "surface_id": "optimal_portfolio_optimizer",
+      "script_path": "scripts/optimal_portfolio_optimizer.py",
+      "domain": "strategy-to-coin assignment",
+      "search_method": "brute-force strategy assignment over simplified simulator",
+      "trust_level": "reconcile_first",
+      "read": "High-value search surface, but it runs on its own simulator and can overstate portfolio quality if execution semantics diverge.",
+      "evidence_paths": [
+        "scripts/optimal_portfolio_optimizer.py",
+        "reports/optimal_portfolio_optimizer.json",
+        "reports/latest_switchboard_output.txt"
+      ],
+      "constraints": [
+        "Treat as a strategy-assignment hypothesis generator only.",
+        "No promotion or runner rewiring without harness confirmation."
+      ]
+    },
+    {
+      "surface_id": "m5_kelly_optimizer_v2",
+      "script_path": "scripts/m5_kelly_optimizer_v2.py",
+      "domain": "portfolio sizing",
+      "search_method": "correlation-adjusted Kelly sizing with literature priors",
+      "trust_level": "research_reference",
+      "read": "Useful for thinking about concentration and correlated risk, but it depends on approximate literature correlations rather than measured live co-movement.",
+      "evidence_paths": [
+        "scripts/m5_kelly_optimizer_v2.py"
+      ],
+      "constraints": [
+        "Use for risk framing and ranking only.",
+        "Do not let it set live size directly."
+      ]
+    }
+  ]
+}

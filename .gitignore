@@ -1,0 +1,59 @@
+# Credentials — NEVER commit
+.env
+
+# Local agent/tool state
+.claude/
+.qwen/
+coordination/
+memory/
+memory.md
+notes/
+repo-index.md
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime state files (regenerated on start)
+canonical_launcher_state.json
+canonical_worker_state.json
+canonical_worker_refusal_state.json
+runtime_state.json
+.lab_telescope_last_seen
+brain.json
+symbol_learner.json
+
+# Large log files
+*.log
+console_*.log
+shadow_*.log
+
+# Generated outputs
+reports/
+data/candle_cache/
+scratch/
+debug_*.json
+*.bak
+scripts/_*
+scripts/ad_hoc/
+tmp*
+tmp_*
+temp_*
+
+# Historical archives (not current truth)
+archive/
+backups/
+
+# War room artifacts
+war_room_messages.json
+war_room_messages.archive.jsonl
+war_room_*.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

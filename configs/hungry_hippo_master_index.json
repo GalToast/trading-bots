@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-04-16T04:27:59.272982+00:00",
+  "symbol_count": 19,
+  "configs": {
+    "ADAUSD": "Escape hatch enabled, regime-matched (MIXED), 0.0x improvement over static",
+    "AUDUSD": "Escape hatch enabled, regime-matched (TREND), 0.0x improvement over static",
+    "BTCUSD": "Escape hatch enabled, regime-matched (EXTREME), 1.3x improvement over static",
+    "DOGEUSD": "Escape hatch enabled, regime-matched (MIXED), 0.0x improvement over static",
+    "ETHUSD": "Escape hatch enabled, regime-matched (EXTREME), 3.2x improvement over static",
+    "EURJPY": "Escape hatch enabled, regime-matched (EXTREME), 0.0x improvement over static",
+    "EURUSD": "Escape hatch enabled, regime-matched (EXTREME), 2.6x improvement over static",
+    "GBPJPY": "Escape hatch enabled, regime-matched (EXTREME), 0.0x improvement over static",
+    "GBPUSD": "Escape hatch enabled, regime-matched (EXTREME), 1.9x improvement over static",
+    "NAS100": "Escape hatch enabled, regime-matched (EXTREME), 0.9x improvement over static",
+    "NZDUSD": "Escape hatch enabled, regime-matched (TREND), 1.6x improvement over static",
+    "SOLUSD": "Escape hatch enabled, regime-matched (MIXED), 0.0x improvement over static",
+    "US30": "Escape hatch enabled, regime-matched (EXTREME), 2.8x improvement over static",
+    "USDCAD": "Escape hatch enabled, regime-matched (TREND), 0.0x improvement over static",
+    "USDCHF": "Escape hatch enabled, regime-matched (EXTREME), 0.0x improvement over static",
+    "USDJPY": "Escape hatch enabled, regime-matched (EXTREME), 1.8x improvement over static",
+    "XAGUSD": "Escape hatch enabled, regime-matched (TREND), 0.0x improvement over static",
+    "XAUUSD": "Escape hatch enabled, regime-matched (TREND), 1.0x improvement over static",
+    "XRPUSD": "Escape hatch enabled, regime-matched (MIXED), 0.0x improvement over static"
+  }
+}

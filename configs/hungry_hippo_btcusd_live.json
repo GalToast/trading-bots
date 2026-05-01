@@ -1,0 +1,74 @@
+{
+  "version": "hungry_hippo_shapeshifter_v1",
+  "generated_at": "2026-04-16T04:27:59.262789+00:00",
+  "symbol": "BTCUSD",
+  "timeframe": "M15",
+  "deployable": true,
+  "deploy_reason": "Escape hatch enabled, regime-matched (EXTREME), 1.3x improvement over static",
+  "geometry": {
+    "step": 473.05142857,
+    "step_buy": 473.05142857,
+    "step_sell": 473.05142857,
+    "asymmetric": false,
+    "asymmetry_ratio": 1.0,
+    "adaptive": {
+      "atr_scaled": true,
+      "atr_current": 236.52571428571122,
+      "regime_coeff": 2.0,
+      "regime": "EXTREME"
+    }
+  },
+  "close": {
+    "alpha": 0.2,
+    "style": "all_profitable",
+    "gap": 1
+  },
+  "rearm": {
+    "variant": "rearm_lvl2_exc2",
+    "cooldown_bars": 12,
+    "momentum_gate": true
+  },
+  "risk": {
+    "max_floating_loss_usd": -15.0,
+    "max_open_per_side": 12,
+    "max_lattice_window_bars": 240,
+    "breakout_buffer_pips": 5.0
+  },
+  "escape_hatch": {
+    "tier1_breakeven": {
+      "max_bars": 12,
+      "max_loss": 5.0,
+      "description": "Close at breakeven after 12 bars if unprofitable"
+    },
+    "tier2_extreme": {
+      "cut_count": 2,
+      "max_loss_per_position": 10.0,
+      "description": "Cut worst 2 positions at extremes, max $10.0 each"
+    },
+    "tier3_full_kill": {
+      "max_floating_loss_usd": -15.0,
+      "description": "Last resort: kill all positions if net floating exceeds threshold"
+    }
+  },
+  "regime": {
+    "control_mode": "wait_extreme_confirmation",
+    "regime": "EXTREME",
+    "gate_enabled": false
+  },
+  "performance": {
+    "static_net": 119.68,
+    "regime_matched_net": 158.5,
+    "improvement_factor": 1.32,
+    "static_closes": 101,
+    "regime_matched_closes": 74
+  },
+  "hungry_hippo_metadata": {
+    "asset_class": "crypto",
+    "evidence_sources": {
+      "extreme_tuning_present": true,
+      "atr_params_present": true,
+      "regime_signal_present": true
+    },
+    "validation_status": "component_coverage_complete"
+  }
+}
