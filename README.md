@@ -4,9 +4,20 @@
 
 AI-assisted quantitative research system for testing trading ideas under explicit validation gates, runtime supervision, and evidence-preserving review.
 
-This repository is best read as a decision-system case study, not as a profit claim. The engineering focus is hypothesis design, experiment control, telemetry, risk limits, watchdog supervision, and proof surfaces that keep both positive and negative evidence visible.
+This repository is best read as a **paper/experimental systems-research case study**, not as a profit claim. The engineering focus is hypothesis design, experiment control, telemetry, risk limits, watchdog supervision, and proof surfaces that keep both positive and negative evidence visible.
 
 In this snapshot, "AI-assisted" means LLM-assisted system design, review, and iteration around rule-based/adaptive trading infrastructure. It does not claim a trained predictive model or autonomous black-box trading agent.
+
+## Public Framing
+
+For recruiter, client, or public review, this project should be evaluated as automation and research infrastructure:
+
+- **Not live-performance marketing:** dollar figures in public evidence files are modeled, paper, shadow, or backtest accounting unless explicitly labeled otherwise.
+- **Not financial advice:** nothing here recommends trading any instrument or deploying any strategy.
+- **Not a black-box prediction claim:** the public signal is the system of tests, telemetry, guardrails, promotion gates, and falsification records.
+- **Not a complete local runtime dump:** broker-connected state, credentials, private logs, generated payloads, and local runtime artifacts are intentionally excluded.
+
+The hiring signal is the ability to build deterministic harnesses around noisy systems, preserve contrary evidence, and keep risk controls visible.
 
 ![Trading lane presentation](docs/assets/trading-lane-presentation.png)
 
@@ -82,4 +93,4 @@ Those files show the most concrete engineering signal: strategy behavior is spec
 
 ## Disclaimer
 
-This is research infrastructure. It is not financial advice, not a guarantee of trading performance, and not a recommendation to trade any instrument.
+This is paper/experimental research infrastructure. It is not financial advice, not a guarantee of trading performance, not a live brokerage performance claim, and not a recommendation to trade any instrument.

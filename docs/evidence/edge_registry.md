@@ -2,7 +2,7 @@
 
 **Generated:** 2026-04-12T22:26:58.314113+00:00
 **Validation standard:** 30d backtest, runner-modeled ($2 min, 90% deploy, session gate)
-**Public evidence note:** The generated source payloads are intentionally excluded from this public snapshot with other local reports. Treat the figures below as a static, runner-modeled research snapshot, not as live trading results or independently reproducible performance claims.
+**Public evidence note:** The generated source payloads are intentionally excluded from this public snapshot with other local reports. Treat every figure below as static, runner-modeled paper research evidence, not as live trading results, brokerage P&L, independently reproducible performance claims, or financial advice.
 
 ## Purpose
 
