@@ -1,5 +1,7 @@
 # Trading Bots Workspace - Quantitative Research & Execution Infrastructure
 
+Developed by [Fred McCullough](https://github.com/GalToast)
+
 [![Focused tests](https://github.com/GalToast/trading-bots/actions/workflows/focused-tests.yml/badge.svg)](https://github.com/GalToast/trading-bots/actions/workflows/focused-tests.yml)
 
 AI-assisted quantitative research system for testing trading ideas under explicit validation gates, runtime supervision, and evidence-preserving review.
@@ -43,6 +45,10 @@ If you have **5 minutes**, check the CI badge, skim the system diagram, and read
 | [`docs/experiment-protocol.md`](./docs/experiment-protocol.md) | The graduation ladder for moving ideas from hypothesis to validated strategy. |
 | [`docs/performance-review.md`](./docs/performance-review.md) | Performance review notes, including failure modes and limitations. |
 | [`COMMAND_CENTER.md`](./COMMAND_CENTER.md) | Runtime posture, deployment gates, and decision status snapshot. |
+
+## The Throughline
+
+I build systems that turn ambiguous real-world signals into bounded operational decisions. In this workspace, that means classifying market tape conditions into profit modes, runtime guards, and survivability-aware controller decisions.
 
 ## System Model
 
