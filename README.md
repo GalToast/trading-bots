@@ -67,12 +67,32 @@ The project combines research scripts, strategy runners, runtime monitors, and d
 | Component | Role |
 | --- | --- |
 | `mt5_bot.py` | Canonical supervisor for monitored worker execution. |
-| `mt5_bot_v10.py` | Canonical worker containing trading loop, entries, and exits. |
+| `mt5_bot_v10.py` | Compatibility shim re-exporting the `bot/mt5/` package API (see below); kept so existing entry points keep working. |
 | `exit_manager.py` | Dynamic exit-policy companion. |
 | `monitor.py` | Watchdog and health-check surface. |
 | `brain.py` | Learning/adaptation logic; generated state is excluded from the public repo. |
 | `bot/` | Policy subroutines for admission, competition lane priority, exits, posture, symbol risk, and price structure. |
 | `scripts/live_kraken_spot_frontier_maker_machinegun_shadow.py` | Current focused Kraken maker shadow runner under unit coverage. |
+
+### MT5 worker package (`bot/mt5/`)
+
+The former 11,344-line `mt5_bot_v10.py` monolith is now a package of 14 modules; `mt5_bot_v10.py` itself is a compatibility shim that re-exports the package's public API. The eight names rebound at runtime (`mt5_connected`, `_brain`, `_learner`, `_tick_cache_cycle`, `consecutive_wins`, `consecutive_losses`, `total_pnl`, `trades`) are single-sourced in `state.py`, and the shim delegates to them live via module `__getattr__`/`__dir__` (PEP 562) — covered by `tests/test_bot_mt5_shared_state.py`.
+
+| Module | Role |
+| --- | --- |
+| `state.py` | Shared mutable runtime state (single source for runtime-rebound names). |
+| `config.py` | Tuning constants for the MT5 worker. |
+| `log.py` | Primitive logging / JSONL helpers (leaf module). |
+| `market_data.py` | MT5 connection, bar/tick caches, broker-state markers. |
+| `indicators.py` | Pure technical-indicator math (RSI/ATR/EMA); unit-tested. |
+| `sessions.py` | Symbol/session classifiers; unit-tested. |
+| `signals.py` | Signal generation (momentum, regime, mean reversion, price action). |
+| `risk.py` | Risk measurement: stress, sizing, margin safety (no order execution). |
+| `positions.py` | Position-state helpers. |
+| `book.py` | Position book: entries, exits, defense and rearm logic. |
+| `journal.py` | Trade/behavior records, snapshots, runtime state files. |
+| `strategy_lab.py` | Experimental strategy-lab lane logic. |
+| `runner.py` | Main worker loop and process entry helpers. |
 
 ## Repository Guide
 
@@ -87,6 +107,7 @@ The project combines research scripts, strategy runners, runtime monitors, and d
 | [`scripts/`](./scripts/) | Research builders, runners, tests, and proof-board generators. |
 | [`tests/`](./tests/) | Discoverable public smoke tests for core policy modules and CI stubs. |
 | [`research/strategies/`](./research/strategies/) | Strategy prototypes and experiment families. |
+| [`configs/`](./configs/) | Strategy parameter configs from tuning/research runs (e.g. `configs/hungry_hippo_eurusd_live.json`). The `_live` / `_shadow` / `_deploy` suffixes name the parameter set's intended lane, not recorded brokerage results — these files are experiment inputs (step sizes, close rules, rearm policies), not profit claims. |
 
 ## Recruiter Reading Path
 
