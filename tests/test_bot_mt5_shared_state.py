@@ -12,6 +12,7 @@ Run from the repo root with:
 """
 from __future__ import annotations
 
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -19,6 +20,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+# mt5_config.py requires credentials at import time; the shim under test pulls
+# it in, so provide dummy values here (MetaTrader5 itself is stubbed via
+# PYTHONPATH=tests/ci_stubs, and CI sets no real credentials).
+os.environ.setdefault("MT5_LOGIN", "12345")
+os.environ.setdefault("MT5_PASSWORD", "dummy")
+os.environ.setdefault("MT5_SERVER", "dummy")
 
 import MetaTrader5 as mt5_stub  # the CI stub module object (shared with bot code)
 
