@@ -1,8 +1,7 @@
 """
-MT5 HUGOSWAY BOT V10 - Competition Killer (10x Mode)
-=====================================================
-Built to 10x a demo account in a trading competition.
-1:500 leverage, equity-based lot sizing, compounding, pyramiding.
+MT5 HUGOSWAY BOT V10 (paper-trading / experimental)
+====================================================
+Paper-trading bot: 1:500 leverage, equity-based lot sizing, compounding, pyramiding.
 
 Changes from V9:
 - Multi-timeframe analysis (M1 entry + M5 confirmation + M15 direction)
