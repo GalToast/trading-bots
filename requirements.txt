@@ -3,13 +3,14 @@
 # repo-local MetaTrader5 CI stub in tests/ci_stubs.
 
 # Common optional dependencies used by broader local research/operator scripts.
-numpy
-pandas
-scikit-learn
-requests
-PyJWT
-rich
-cryptography
-playwright
-ib-insync
+# Pinned 2026-09-30; verified to install cleanly together (fresh venv, pip).
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.9.1
+requests==2.34.2
+PyJWT==2.15.1
+rich==15.0.0
+cryptography==50.0.2
+playwright==1.63.0
+ib-insync==0.9.86
 MetaTrader5; platform_system == "Windows"
