@@ -1,7 +1,8 @@
 """
 EURUSD Spread Gate Fix Proposal Generator
 
-Reads the current spread gate configuration from mt5_bot_v10.py,
+Reads the current spread gate configuration from bot/mt5/config.py
+(extracted from mt5_bot_v10.py during the package refactor),
 documents the EURUSD findings, proposes two fix options, and writes
 the proposal to docs/eurusd_fix_proposal.md.
 """
@@ -10,7 +11,8 @@ import re
 from datetime import datetime
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOT_FILE = os.path.join(REPO_ROOT, "mt5_bot_v10.py")
+CONFIG_FILE = os.path.join(REPO_ROOT, "bot", "mt5", "config.py")
+BOT_FILE = os.path.join(REPO_ROOT, "mt5_bot_v10.py")  # legacy location, pre-refactor
 OUTPUT_FILE = os.path.join(REPO_ROOT, "docs", "eurusd_fix_proposal.md")
 
 # --- Findings (from analysis) ---
@@ -38,11 +40,18 @@ PROPOSED_CONSTANTS = {
 }
 
 
+def _config_source_file():
+    """Constants live in bot/mt5/config.py after the package refactor."""
+    if os.path.exists(CONFIG_FILE):
+        return CONFIG_FILE
+    return BOT_FILE
+
+
 def read_current_constants():
-    """Read actual current values from mt5_bot_v10.py."""
+    """Read actual current values from the config source file."""
     values = {}
     try:
-        with open(BOT_FILE, "r", encoding="utf-8", errors="replace") as f:
+        with open(_config_source_file(), "r", encoding="utf-8", errors="replace") as f:
             content = f.read()
         for name in CURRENT_CONSTANTS:
             # Match: NAME = value  (with optional comment)
