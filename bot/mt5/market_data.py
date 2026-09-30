@@ -1,7 +1,8 @@
 """MT5 connection, bar/tick caches and broker-state markers."""
 from __future__ import annotations
 from .config import *  # noqa: F401,F403
-from .state import _bars_cache, _brain, _learner, _tick_cache, _tick_cache_cycle, alleyway_state, mt5_connected  # noqa: F401
+from . import state
+from .state import _bars_cache, _tick_cache, alleyway_state  # noqa: F401
 from brain import TradingBrain
 from mt5_config import LOGIN
 from mt5_config import PASSWORD
@@ -13,7 +14,6 @@ from .log import log
 
 
 def connect_mt5():
-    global mt5_connected
     for attempt in range(5):
         try:
             try:
@@ -30,7 +30,7 @@ def connect_mt5():
                         f"got={getattr(info, 'login', None)} expected={LOGIN}"
                     )
                 else:
-                    mt5_connected = True
+                    state.mt5_connected = True
                     log(f"Connected to MT5 account {int(info.login)} (attempt {attempt + 1})")
                     return True
             else:
@@ -38,12 +38,11 @@ def connect_mt5():
         except Exception as e:
             log(f"MT5 connection error (attempt {attempt + 1}): {e}")
         time.sleep(3)
-    mt5_connected = False
+    state.mt5_connected = False
     return False
 
 def ensure_mt5():
-    global mt5_connected
-    if not mt5_connected:
+    if not state.mt5_connected:
         return connect_mt5()
     try:
         info = mt5.account_info()
@@ -51,7 +50,7 @@ def ensure_mt5():
             raise ConnectionError("account_info returned None")
         if int(getattr(info, "login", 0) or 0) != LOGIN:
             log(f"ACCOUNT_MISMATCH detected: terminal={getattr(info, 'login', None)} expected={LOGIN}, reconnecting...")
-            mt5_connected = False
+            state.mt5_connected = False
             try:
                 mt5.shutdown()
             except:
@@ -64,7 +63,7 @@ def ensure_mt5():
             mt5.shutdown()
         except:
             pass
-        mt5_connected = False
+        state.mt5_connected = False
         return connect_mt5()
 
 def get_bars(symbol, timeframe=mt5.TIMEFRAME_M1, count=50):
@@ -93,9 +92,7 @@ def get_tick_cached(symbol, current_cycle=0):
     
     Returns the tick object or None. Within the same cycle, returns cached data.
     """
-    global _tick_cache, _tick_cache_cycle
-    
-    if current_cycle > 0 and current_cycle == _tick_cache_cycle and symbol in _tick_cache:
+    if current_cycle > 0 and current_cycle == state._tick_cache_cycle and symbol in _tick_cache:
         ts, tick = _tick_cache[symbol]
         return tick
     
@@ -114,10 +111,8 @@ def refresh_tick_cache_for_cycle(symbols, current_cycle=0):
     happen when different functions (manage_position, stale checks, etc.)
     each call symbol_info_tick() for the same symbol.
     """
-    global _tick_cache, _tick_cache_cycle
-    
     _tick_cache.clear()
-    _tick_cache_cycle = current_cycle
+    state._tick_cache_cycle = current_cycle
     
     for symbol in symbols:
         try:
@@ -229,13 +224,11 @@ def get_broker_connection_backoff_remaining(now=None):
     return max(0.0, until - now)
 
 def get_brain():
-    global _brain
-    if _brain is None:
-        _brain = TradingBrain()
-    return _brain
+    if state._brain is None:
+        state._brain = TradingBrain()
+    return state._brain
 
 def get_learner():
-    global _learner
-    if _learner is None:
-        _learner = SymbolLearner()
-    return _learner
+    if state._learner is None:
+        state._learner = SymbolLearner()
+    return state._learner

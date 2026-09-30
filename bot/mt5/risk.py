@@ -1,7 +1,7 @@
 """Risk measurement: stress, sizing, margin safety (no order execution)."""
 from __future__ import annotations
 from .config import *  # noqa: F401,F403
-from .state import active_positions, alleyway_state, cooldown_until, equity_peak, recent_risk_events, trades  # noqa: F401
+from .state import active_positions, alleyway_state, equity_peak, recent_risk_events  # noqa: F401
 from collections.abc import Mapping
 import MetaTrader5 as mt5
 import json

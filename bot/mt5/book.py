@@ -1,7 +1,7 @@
 """Position book manager: entries, exits, defense and rearm logic."""
 from __future__ import annotations
 from .config import *  # noqa: F401,F403
-from .state import active_positions, alleyway_state, cooldown_until, recently_trimmed_symbols, total_pnl  # noqa: F401
+from .state import active_positions, alleyway_state, recently_trimmed_symbols  # noqa: F401
 from datetime import datetime
 from datetime import timezone
 from mt5_config import BOT_COMMENT_PREFIX

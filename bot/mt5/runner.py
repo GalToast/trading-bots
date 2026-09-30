@@ -1,7 +1,8 @@
 """Main worker loop and process entry helpers."""
 from __future__ import annotations
 from .config import *  # noqa: F401,F403
-from .state import _bars_cache, active_positions, alleyway_state, consecutive_losses, consecutive_wins, recently_trimmed_symbols, total_pnl, trades  # noqa: F401
+from . import state
+from .state import _bars_cache, active_positions, alleyway_state, recently_trimmed_symbols  # noqa: F401
 from datetime import datetime
 from datetime import timezone
 from mt5_config import BOT_MAGIC
@@ -22,7 +23,6 @@ from .strategy_lab import build_lane_key, get_active_strategy_lab_lane_config, g
 
 
 def run():
-    global consecutive_wins, consecutive_losses, total_pnl, trades
     brain = get_brain()
     write_worker_state("starting", "startup", "worker boot", "run entered")
 
@@ -239,7 +239,7 @@ def run():
             alleyway_state['recent_atr_avg'] = avg_atr
             
             relaxation, relax_reasons = calc_alleyway_relaxation(
-                equity, start_equity, trades, consecutive_wins, consecutive_losses
+                equity, start_equity, state.trades, state.consecutive_wins, state.consecutive_losses
             )
             adaptive_threshold = get_adaptive_threshold(MIN_CONFIDENCE_BASE, relaxation)
             
@@ -328,7 +328,7 @@ def run():
                         alleyway_state['last_sync_close_holdoff_checked_at'] = datetime.now(timezone.utc).isoformat()
                         log(f"  SYNC_CLOSE_HOLDOFF {holdoff_event}")
                     sync_closed_this_cycle += 1
-                    total_pnl += pnl
+                    state.total_pnl += pnl
                     emit_trade_behavior_record(
                         ticket,
                         pdata,
@@ -353,17 +353,17 @@ def run():
                     # Record outcome with symbol learner for adaptive parameter tuning
                     learner = get_learner()
                     learner.record_outcome(pdata['symbol'], pnl, pdata.get('mode', 'MACHINE_GUN'), {"failure_reason": failure_reason} if failure_reason else {})
-                    trades += 1
+                    state.trades += 1
                     log(
                         f"  SYNC_CLOSE #{ticket} {format_position_observability(pdata)} "
                         f"source=main_loop_sync"
                     )
                     if pnl > 0:
-                        consecutive_wins += 1
-                        consecutive_losses = 0
+                        state.consecutive_wins += 1
+                        state.consecutive_losses = 0
                     else:
-                        consecutive_losses += 1
-                        consecutive_wins = 0
+                        state.consecutive_losses += 1
+                        state.consecutive_wins = 0
 
             critical_derisks_this_cycle = critical_margin_derisk_positions(brain)
             trims_this_cycle = trim_stressed_symbol_positions(brain)
@@ -500,7 +500,7 @@ def run():
             
             # === LOSS STREAK COOLDOWN ===
             cooldown_end = alleyway_state.get('cooldown_until', 0)
-            if consecutive_losses >= 10:
+            if state.consecutive_losses >= 10:
                 if cooldown_end == 0:
                     # Start cooldown
                     cooldown_end = time.time() + LOSS_STREAK_COOLDOWN_MINUTES * 60
@@ -517,7 +517,7 @@ def run():
                 effective_adaptive_threshold = max(effective_adaptive_threshold, FIRE_MODES['SNIPER']['min_confidence'])
             
             # Clear cooldown if streak clears
-            if consecutive_losses == 0 and cooldown_end > 0:
+            if state.consecutive_losses == 0 and cooldown_end > 0:
                 alleyway_state['cooldown_until'] = 0
                 log("✅ COOLDOWN CLEARED - resuming full entries")
 
@@ -2521,7 +2521,7 @@ def run():
                 session = "OVERLAP" if overlap_active else "ACTIVE"
                 log(
                     f"  [{session}] Active:{len(active_positions)} ({mode_summary}) "
-                    f"Trades:{trades} P/L:${total_pnl:+.2f} W:{consecutive_wins} L:{consecutive_losses} "
+                    f"Trades:{state.trades} P/L:${state.total_pnl:+.2f} W:{state.consecutive_wins} L:{state.consecutive_losses} "
                     f"Eq:${equity:.2f} Trims:{trims_this_cycle} Derisks:{critical_derisks_this_cycle} SoftDerisks:{defend_derisks_this_cycle} WinBags:{winner_bags_this_cycle} Unwinds:{financed_unwinds_this_cycle + anchor_unwinds_this_cycle + small_book_unwinds_this_cycle + pinned_unwinds_this_cycle + crowd_unwinds_this_cycle} Cleanups:{adopted_cleaned} ManagedExits:{managed_exits_this_cycle} SyncCloses:{sync_closed_this_cycle} "
                     f"Posture:{alleyway_state['entry_posture']}"
                 )

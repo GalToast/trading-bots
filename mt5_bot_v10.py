@@ -487,25 +487,43 @@ from bot.mt5.config import (
 )
 from bot.mt5.state import (
     _bars_cache,
-    _brain,
-    _learner,
     _tick_cache,
-    _tick_cache_cycle,
     active_positions,
     alleyway_state,
-    consecutive_losses,
-    consecutive_wins,
     cooldown_until,
     cycles_without_trade,
     equity_peak,
     hourly_trades_count,
     last_hourly_reset,
-    mt5_connected,
     recent_risk_events,
     recently_trimmed_symbols,
-    total_pnl,
-    trades,
 )
+from bot.mt5 import state as _mt5_state
+
+# PEP 562 module __getattr__: these names are *rebound* at runtime (not merely
+# mutated in place), so a plain from-import would freeze them at import-time
+# values. Delegating attribute access keeps the shim's drop-in contract live,
+# matching the original monolith's semantics.
+_LIVE_STATE_NAMES = frozenset({
+    "_brain",
+    "_learner",
+    "_tick_cache_cycle",
+    "consecutive_losses",
+    "consecutive_wins",
+    "mt5_connected",
+    "total_pnl",
+    "trades",
+})
+
+
+def __getattr__(name):
+    if name in _LIVE_STATE_NAMES:
+        return getattr(_mt5_state, name)
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+
+
+def __dir__():
+    return sorted(set(globals()) | _LIVE_STATE_NAMES)
 from bot.mt5.log import (
     append_jsonl_record,
     get_process_command_line,
